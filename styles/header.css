@@ -1,0 +1,179 @@
+.site-header {
+    padding: 8px 40px;
+    max-height: 40px;
+    background-color: var(--background-header);
+}
+
+.header-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.header-carousel-container {
+    position: relative;
+
+    grid-column: 2 / 3;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.arrow {
+    align-self: center;
+    cursor: pointer;
+}
+
+.header-carousel {
+    display: flex;
+    width: clamp(100px, 100%, 500px);
+}
+
+.carousel-item, .carousel-item > a {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+    color: var(--text-carousel);
+    text-align: center;
+    width: fit-content;
+
+    transition: opacity 500ms linear;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.carousel-item-hidden {
+    position: absolute;
+    width: clamp(100px, 100%, 500px);
+
+    transition: opacity 500ms linear;
+    opacity: 0;
+    z-index: -10;
+}
+
+.header-navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text-carousel);
+    line-height: normal;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-link-login::before {
+    content: '';
+    background: url("../assets/login.svg") no-repeat center;
+    width: 16px;
+    height: 16px;
+    align-self: center;
+    padding-right: 6px;
+}
+
+.nav-link-wishlist {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.wishlist-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.my-wishlist {
+    position: absolute;
+    top: 20px;
+
+    background-color: var(--background-wishlist);
+    width: 60px;
+    color: var(--text-wishlist);
+    border: 1px solid var(--border-wishlist);
+
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    padding: 3px;
+
+    pointer-events: none;
+}
+
+.my-wishlist-hidden {
+    display: none;
+}
+
+.nav-link-language {
+    position: relative;
+    margin-left: 15px;
+    box-sizing: border-box;
+}
+
+.nav-link-language::before {
+    content: '';
+    background: url("../assets/language.svg") no-repeat center;
+    width: 16px;
+    height: 16px;
+
+    align-self: center;
+    margin-right: 5px;
+}
+
+.nav-link-language::after {
+    content: '';
+    background: url("../assets/countrySelectror.svg") no-repeat center;
+    width: 16px;
+    height: 16px;
+
+    align-self: center;
+    padding-left: 3px;
+    margin-top: 2px;
+}
+
+.dropdown-country-selector {
+    position: absolute;
+    width: clamp(220px, 100%, 220px);
+    box-sizing: border-box;
+
+    background-color: var(--background-primary);
+    border: 1px solid var(--border-country-selector);
+    padding: 25px 20px;
+    top: 20px;
+    right: 0;
+    z-index: 10;
+
+    cursor: auto;
+}
+
+.dropdown-item {
+    display: flex;
+    width: fit-content;
+    gap: 8px;
+
+    font-size: 14px;
+    font-family: 'PT Sans', Arial, sans-serif;
+    color: var(--text-primary);
+
+    cursor: pointer;
+}
+
+.dropdown-item::before {
+    content: '';
+    background: url("../assets/russian-flag.svg") no-repeat center;
+    width: 16px;
+    height: 16px;
+
+    align-self: center;
+}
+
+.country-selector-hidden {
+    display: none;
+}
+

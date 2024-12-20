@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iRobot</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/colors.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/navigation.css">
 </head>
 <body>
-$END$
+
+<!-- HEADER -->
+<header class="site-header">
+    <div class="header-wrapper">
+        <div class="header-carousel-container">
+            <img class="arrow" src="assets/arrow-left.svg" width="16px" height="16px" alt="arrow-left">
+            <div class="header-carousel">
+                <div class="carousel-item">Order by 12/19/24 at 11:59 PM EST for 2-day shipping on all robot
+                    orders for delivery by 12/24/24.
+                    <a href="https://www.irobot.com/en_US/deals.html" target="_blank">
+                        Select preferred shipping option at checkout.
+                    </a>
+                </div>
+                <div class="carousel-item carousel-item-hidden">New Markdown: 45% off the Roomba Combo® i5+
+                    Self-Emptying Robot Vacuum and Mop.
+                    <a href="https://www.irobot.com/en_US/roomba-combo-i5-series-robot-vacuum-and-mop/Roomba-Combo-i5-Series-Robots.html" target="_blank">
+                        Shop Deal
+                    </a>
+                </div>
+            </div>
+            <img class="arrow" src="assets/arrow-right.svg" width="16px" height="16px" alt="arrow-right">
+        </div>
+        <nav class="header-navigation">
+            <a class="nav-link" href="https://homesupport.irobot.com/s/" target="_blank">Support</a>
+            <a class="nav-link" href="https://www.irobot.com/en_US/login" target="_blank">Order Status</a>
+            <a class="nav-link nav-link-login" href="https://www.irobot.com/en_US/login" target="_blank">Login</a>
+            <a class="nav-link nav-link-wishlist" href="https://www.irobot.com/en_US/wishlist" target="_blank">
+                <img class="wishlist-icon" src="assets/wishlist.svg" width="16px" height="16px" alt="wishlist">
+                <span class="my-wishlist my-wishlist-hidden">My Wishlist</span>
+            </a>
+            <div class="nav-link nav-link-language">English (United States)
+                <div class="dropdown-country-selector country-selector-hidden">
+                    <div class="dropdown-item">Росссия (Русский)</div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- NAVIGATION -->
+<nav class="container-navigation">
+    <div class="navigation-left">
+        <img src="assets/logo.svg" width="120px" height="28px" alt="logo">
+        <a class="offers" href="https://www.irobot.com/en_US/deals.html" target="_blank">Holiday Savings</a>
+        <nav class="nav-item">Shop</nav>
+        <nav class="nav-item">Explore</nav>
+        <nav class="nav-item">Parts & Accessories</nav>
+    </div>
+    <div class="navigation-right">
+        <input class="nav-search" type="text" placeholder="Search">
+        <img class="search-icon" src="assets/search.svg" width="24px" height="24px" alt="search">
+        <img class="minicart-icon" src="assets/minicart.svg" width="24px" height="24px" alt="shopping">
+    </div>
+</nav>
+
+
+<script src="scripts/header.js"></script>
 </body>
 </html>
