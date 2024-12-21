@@ -27,16 +27,6 @@ arrowEls.forEach(arrow => {
     });
 });
 
-// WISHLIST
-const wishlistEl = document.querySelector('.wishlist-icon');
-const myWishlistEl = document.querySelector('.my-wishlist');
-
-wishlistEl.addEventListener('mouseenter', () => {
-    setTimeout(() => {
-        myWishlistEl.classList.remove('my-wishlist-hidden');
-    },500)
-});
-
 // DROPDOWN COUNTRY SELECTOR
 const dropdownCountrySelectorEl = document.querySelector('.dropdown-country-selector');
 

@@ -1,7 +1,6 @@
 .site-header {
     padding: 8px 40px;
-    max-height: 40px;
-    background-color: var(--background-header);
+    background-color: var(--color-light-green);
 }
 
 .header-wrapper {
@@ -33,7 +32,7 @@
     font-size: 14px;
     font-weight: 600;
     line-height: normal;
-    color: var(--text-carousel);
+    color: var(--color-muted-blue-grey);
     text-align: center;
     width: fit-content;
 
@@ -48,7 +47,6 @@
 
     transition: opacity 500ms linear;
     opacity: 0;
-    z-index: -10;
 }
 
 .header-navigation {
@@ -63,7 +61,7 @@
     align-items: center;
     font-family: 'PT Sans', Arial, sans-serif;
     font-size: 14px;
-    color: var(--text-carousel);
+    color: var(--color-muted-blue-grey);
     line-height: normal;
     text-decoration: none;
     cursor: pointer;
@@ -88,26 +86,6 @@
 .wishlist-icon {
     width: 16px;
     height: 16px;
-}
-
-.my-wishlist {
-    position: absolute;
-    top: 20px;
-
-    background-color: var(--background-wishlist);
-    width: 60px;
-    color: var(--text-wishlist);
-    border: 1px solid var(--border-wishlist);
-
-    font-family: 'PT Sans', Arial, sans-serif;
-    font-size: 12px;
-    padding: 3px;
-
-    pointer-events: none;
-}
-
-.my-wishlist-hidden {
-    display: none;
 }
 
 .nav-link-language {
@@ -142,8 +120,8 @@
     width: clamp(220px, 100%, 220px);
     box-sizing: border-box;
 
-    background-color: var(--background-primary);
-    border: 1px solid var(--border-country-selector);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-light-grey);
     padding: 25px 20px;
     top: 20px;
     right: 0;
@@ -159,7 +137,7 @@
 
     font-size: 14px;
     font-family: 'PT Sans', Arial, sans-serif;
-    color: var(--text-primary);
+    color: var(--color-dark-grey);
 
     cursor: pointer;
 }

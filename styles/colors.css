@@ -1,21 +1,16 @@
 :root {
-    /* HEADER */
-    --background-header: #dce9d5;
-
-    --background-primary: #ffffff;
-
-    --background-wishlist: #1f1f1f;
-    --text-wishlist: #ffffff;
-    --border-wishlist: #cacaca;
-
-    --border-country-selector: #d9d9d9;
-    --text-primary: #3C4453FF;
-
-    --text-carousel: #596273;
-
-    /* NAVIGATION */
-    --offers: #D0312D;
-
-    --border-nav-input: #d3ead2;
-    --background-input: #f2f2f2;
+    --color-light-green: #dce9d5;
+    --color-white: #ffffff;
+    --color-light-grey: #d9d9d9;
+    --color-dark-grey: #3C4453;
+    --color-muted-blue-grey: #596273;
+    --color-red: #D0312D;
+    --color-pale-green: #d3ead2;
+    --color-lightest-grey: #f2f2f2;
+    --color-bright-green: #6cb86a;
+    --color-forest-green: #447355;
+    --color-pale-mint: #eaf2e6;
+    --color-light-mint-grey: #e2e3e6;
+    --color-steel-grey: #6a768c;
+    --color-muted-teal: #6b8a82;
 }
