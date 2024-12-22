@@ -1,34 +1,38 @@
 const navItemEls = [...document.querySelectorAll('.nav-item')];
-const containerDropdownMenuShopEls = [...document.querySelectorAll('.container-dropdown-menu-shop')];
+const containerPopupMenuEls = [...document.querySelectorAll('.container-popup-menu')];
 
-navItemEls.forEach(item => {
-    item.addEventListener('click', () => {
-        showMenu(item);
-    });
-});
+document.addEventListener('click', e => showMenu(e));
 
-const showMenu = (item) => {
+const showMenu = e => {
+    const containerDropdownMenuShop = e.target.closest('.container-popup-menu');
+    const navItem = e.target.closest('.nav-item');
 
-    const dataNavItemId = item.dataset.navItem;
+    if (!navItem && !containerDropdownMenuShop) {
+        containerPopupMenuEls.forEach(menu => menu.classList.add('container-popup-menu-hidden'));
+        navItemEls.forEach(item => item.classList.remove('select-nav-item'));
+        return;
+    }
 
-    containerDropdownMenuShopEls.forEach(menu => {
+    if (navItem) {
+        const dataNavItemId = navItem.dataset.navItem;
 
-        if (dataNavItemId === menu.getAttribute('data-dropdown-menu')) {
-            menu.classList.toggle('container-dropdown-menu-shop-hidden');
+        navItemEls.forEach(item => {
+            if (item === navItem) {
+                item.classList.toggle('select-nav-item');
+            } else {
+                item.classList.remove('select-nav-item');
+            }
+        });
 
-        } else if (dataNavItemId !== menu.getAttribute('data-dropdown-menu')) {
-            menu.classList.add('container-dropdown-menu-shop-hidden');
-        }
-
-    });
-
+        containerPopupMenuEls.forEach(menu => {
+            if (menu.getAttribute('data-dropdown-menu') === dataNavItemId) {
+                menu.classList.toggle('container-popup-menu-hidden');
+            } else {
+                menu.classList.add('container-popup-menu-hidden');
+            }
+        });
+    }
 };
-
-// document.addEventListener('click', e => {
-//     const containerDropdownMenu = e.target.closest('.container-dropdown-menu-shop');
-//
-//     if (!containerDropdownMenu && !)
-// });
 
 const menuCategoryEls = [...document.querySelectorAll('.menu-link')];
 const robotCategoryShopEls = [...document.querySelectorAll('.robot-image')];
@@ -46,8 +50,6 @@ menuCategoryEls.forEach(menu => {
             } else if (dataMenuId !== robot.getAttribute('data-robot')) {
                 robot.classList.add('robot-hidden');
             }
-
         });
-
     });
 });

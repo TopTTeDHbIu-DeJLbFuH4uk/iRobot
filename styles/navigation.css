@@ -31,7 +31,6 @@
 
 .nav-item {
     margin-top: 14px;
-    margin-bottom: 1px;
 
     font-family: 'PT Sans', Arial, sans-serif;
     font-size: 16px;
@@ -88,19 +87,22 @@
 }
 
 /* CATEGORY SHOP */
-.container-dropdown-menu-shop {
-    display: flex;
-    width: clamp(100px, 100%, 1200px);
+.container-popup-menu {
+    position: absolute;
 
-    padding-left: 200px;
-    z-index: 100;
+    display: flex;
+    width: clamp(100px, 100%, 1177px);
+    background-color: var(--color-white);
+
+    margin-left: 200px;
+    z-index: 1000;
 }
 
-.container-dropdown-menu-shop-hidden {
+.container-popup-menu-hidden {
     display: none;
 }
 
-.dropdown-menu-shop {
+.popup-menu {
     padding: 60px 40px 60px 60px;
     width: fit-content;
 }
@@ -232,6 +234,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /*flex-grow: 1;*/
     height: 100%;
     width: clamp(10px, 100%, 320px);
     background-color: var(--color-steel-grey);

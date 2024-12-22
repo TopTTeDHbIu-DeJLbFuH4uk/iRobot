@@ -1,19 +1,25 @@
 .container-video {
     position: relative;
+    display: flex;
     width: 100%;
+    height: 100%;
 }
 
 .content-video {
     position: absolute;
+    object-fit: cover;
     z-index: -1;
     width: 100%;
+
 }
 
 .container-content {
     display: flex;
     flex-direction: column;
     width: clamp(100px, 100%, 680px);
-    padding-left: 160px;
+    /*height: 634px;*/
+    height: 100%;
+    padding-left: 140px;
 }
 
 .container-eyebrow {
@@ -39,7 +45,7 @@
 }
 
 .container-content > h1 {
-    width: clamp(10px, 100%, 600px);
+    width: clamp(10px, 100%, 650px);
 
     font-family: 'PT Sans', Arial, sans-serif;
     font-size: 56px;
@@ -54,4 +60,60 @@
     font-size: 16px;
     font-weight: 500;
     color: var(--color-white);
+}
+
+.container-btn-content {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+
+.btn-shop-robot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(20px, 100%, 275px);
+
+    background-color: var(--color-forest-green);
+    border-radius: 37px;
+
+    padding: 16px 0 16px 0;
+
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white);
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.btn-shop-robot:hover {
+    transition: all .2s ease-in-out;
+    outline: 6px solid var(--color-n);
+}
+
+.btn-shop-accessory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(20px, 100%, 300px);
+
+    border-radius: 37px;
+    border: 2px solid var(--color-white);
+
+    padding: 16px 0 16px 0;
+
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white);
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.btn-shop-accessory:hover {
+    transition: all .2s ease-in-out;
+    outline: 6px solid hsla(0, 0%, 100%, .3);
 }
