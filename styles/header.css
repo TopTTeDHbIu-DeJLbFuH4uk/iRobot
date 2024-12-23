@@ -69,7 +69,7 @@
 
 .nav-link-login::before {
     content: '';
-    background: url("../assets/login.svg") no-repeat center;
+    background: url("../assets/other/login.svg") no-repeat center;
     width: 16px;
     height: 16px;
     align-self: center;
@@ -96,7 +96,7 @@
 
 .nav-link-language::before {
     content: '';
-    background: url("../assets/language.svg") no-repeat center;
+    background: url("../assets/other/language.svg") no-repeat center;
     width: 16px;
     height: 16px;
 
@@ -106,7 +106,7 @@
 
 .nav-link-language::after {
     content: '';
-    background: url("../assets/countrySelectror.svg") no-repeat center;
+    background: url("../assets/other/countrySelectror.svg") no-repeat center;
     width: 16px;
     height: 16px;
 
@@ -144,7 +144,7 @@
 
 .dropdown-item::before {
     content: '';
-    background: url("../assets/russian-flag.svg") no-repeat center;
+    background: url("../assets/other/russian-flag.svg") no-repeat center;
     width: 16px;
     height: 16px;
 

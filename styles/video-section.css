@@ -1,28 +1,76 @@
-.container-video {
+.video-section {
     position: relative;
+
     display: flex;
+    width: 100%;
+
+    border-bottom: 1px solid var(--color-black);
+}
+
+.video-section::before {
+    position: absolute;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
 
-.content-video {
-    position: absolute;
-    object-fit: cover;
-    z-index: -1;
+.hero-video {
     width: 100%;
-
 }
 
-.container-content {
+.controller-video-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--color-white);
+    height: 36px;
+    width: 36px;
+
+    cursor: pointer;
+}
+
+.controller-video-button > img:first-child {
+    padding-left: 2px;
+}
+
+.controller-video-button:hover {
+    transition: all .2s ease-in-out;
+    outline-offset: -3px;
+    outline: 9px solid hsla(0, 0%, 100%, .3);
+}
+
+.inactive {
+    display: none;
+}
+
+.is-active {
+    outline-offset: 3px;
+    outline: 3px solid hsla(0, 0%, 100%, .3);
+}
+
+.video-overlay {
+    position: absolute;
+
     display: flex;
     flex-direction: column;
-    width: clamp(100px, 100%, 680px);
-    /*height: 634px;*/
+    justify-content: center;
+
     height: 100%;
-    padding-left: 140px;
+    padding-left: 130px;
 }
 
-.container-eyebrow {
+.eyebrow-section {
     width: clamp(10px, 100%, 107px);
     height: 22px;
     background-color: var(--color-red);
@@ -31,7 +79,7 @@
     margin-bottom: 12px;
 }
 
-.eyebrow {
+.eyebrow-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +92,7 @@
     color: var(--color-white);
 }
 
-.container-content > h1 {
+.video-overlay > h1 {
     width: clamp(10px, 100%, 650px);
 
     font-family: 'PT Sans', Arial, sans-serif;
@@ -55,20 +103,20 @@
     margin: 0;
 }
 
-.container-content > p {
+.video-overlay > p {
     font-family: 'PT Sans', Arial, sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: var(--color-white);
 }
 
-.container-btn-content {
+.button-section {
     display: flex;
     gap: 25px;
     width: 100%;
 }
 
-.btn-shop-robot {
+.button-shop-robot {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,12 +136,12 @@
     cursor: pointer;
 }
 
-.btn-shop-robot:hover {
+.button-shop-robot:hover {
     transition: all .2s ease-in-out;
     outline: 6px solid var(--color-n);
 }
 
-.btn-shop-accessory {
+.button-shop-accessory {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,7 +161,16 @@
     cursor: pointer;
 }
 
-.btn-shop-accessory:hover {
+.button-shop-accessory:hover {
     transition: all .2s ease-in-out;
     outline: 6px solid hsla(0, 0%, 100%, .3);
+}
+
+.offers-valid {
+    padding-top: 15px;
+
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white);
 }

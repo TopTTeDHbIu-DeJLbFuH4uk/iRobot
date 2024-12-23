@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/navigation.css">
-    <link rel="stylesheet" href="styles/content.css">
+    <link rel="stylesheet" href="styles/video-section.css">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 <header class="site-header">
     <div class="header-wrapper">
         <div class="header-carousel-container">
-            <img class="arrow" src="assets/arrow-left.svg" width="16px" height="16px" alt="arrow-left">
+            <img class="arrow" src="assets/other/arrow-left.svg" width="16px" height="16px" alt="arrow-left">
             <div class="header-carousel">
                 <div class="carousel-item">Order by 12/19/24 at 11:59 PM EST for 2-day shipping on all robot
                     orders for delivery by 12/24/24.
@@ -34,14 +34,14 @@
                     </a>
                 </div>
             </div>
-            <img class="arrow" src="assets/arrow-right.svg" width="16px" height="16px" alt="arrow-right">
+            <img class="arrow" src="assets/other/arrow-right.svg" width="16px" height="16px" alt="arrow-right">
         </div>
         <nav class="header-navigation">
             <a class="nav-link" href="https://homesupport.irobot.com/s/" target="_blank">Support</a>
             <a class="nav-link" href="https://www.irobot.com/en_US/login" target="_blank">Order Status</a>
             <a class="nav-link nav-link-login" href="https://www.irobot.com/en_US/login" target="_blank">Login</a>
             <a class="nav-link nav-link-wishlist" href="https://www.irobot.com/en_US/wishlist" target="_blank">
-                <img class="wishlist-icon" title="My Wishlist" src="assets/wishlist.svg" width="16px" height="16px"
+                <img class="wishlist-icon" title="My Wishlist" src="assets/other/wishlist.svg" width="16px" height="16px"
                      alt="wishlist">
             </a>
             <div class="nav-link nav-link-language">English (United States)
@@ -55,7 +55,7 @@
 <!-- NAVIGATION -->
 <nav class="container-navigation">
     <div class="navigation-left">
-        <img src="assets/logo.svg" width="120px" height="28px" alt="logo">
+        <img src="assets/other/logo.svg" width="120px" height="28px" alt="logo">
         <a class="nav-link-highlight" href="https://www.irobot.com/en_US/deals.html" target="_blank">Holiday Savings</a>
         <nav class="nav-item" data-nav-item="1">Shop</nav>
         <nav class="nav-item" data-nav-item="2">Explore</nav>
@@ -63,11 +63,12 @@
     </div>
     <div class="navigation-right">
         <input class="nav-search" type="text" placeholder="Search">
-        <img class="search-icon" src="assets/search.svg" width="24px" height="24px" alt="search">
-        <img class="minicart-icon" src="assets/minicart.svg" width="24px" height="24px" alt="shopping">
+        <img class="search-icon" src="assets/other/search.svg" width="24px" height="24px" alt="search">
+        <a class="minicart-icon" href="https://www.irobot.com/en_US/cart" target="_blank"></a>
     </div>
 </nav>
-<!-- CATEGORY SHOP -->
+<!-- CATEGORIES -->
+    <!-- 1 -->
 <div class="container-popup-menu container-popup-menu-hidden" data-dropdown-menu="1">
     <div class="popup-menu">
         <a class="menu-link" href="https://www.irobot.com/en_US/deals.html" data-menu="1" target="_blank">Deals &
@@ -89,7 +90,7 @@
             all
             Robots</a>
     </div>
-    <div class="container-category-info">
+    <div class="container-banner">
         <div class="banner">
             <div class="container-robot-item">
                 <img class="robot-image" data-robot="1" src="assets/robots/Roomba_j9+_m6.png" width="200px"
@@ -105,6 +106,8 @@
                      width="200px" height="200px" alt="robot">
             </div>
         </div>
+    </div>
+    <div class="container-category-info">
         <div class="category-details">
             <div class="details-header">Smart Ways to Shop</div>
             <div class="details-subheader"></div>
@@ -117,95 +120,145 @@
                 <a class="info-link" href="https://www.irobot.com/en_US/affirm-financing.html">Financing</a>
             </div>
         </div>
-        <div class="promo-container">
-            <div class="promo-header">Holiday Savings</div>
-            <div class="promo-content">Up to $400 off our Roomba® robots for a limited time.</div>
-            <div class="promo-button-container">
-                <a class="promo-button" href="https://www.irobot.com/en_US/deals.html" target="_blank">Shop now</a>
-            </div>
+    </div>
+    <div class="promo-container">
+        <div class="promo-header">Holiday Savings</div>
+        <div class="promo-content">Up to $400 off our Roomba® robots for a limited time.</div>
+        <div class="promo-button-container">
+            <a class="promo-button" href="https://www.irobot.com/en_US/deals.html" target="_blank">Shop now</a>
         </div>
     </div>
 </div>
+    <!-- 2 -->
 <div class="container-popup-menu container-popup-menu-hidden" data-dropdown-menu="2">
     <div class="popup-menu">
-        <a href="https://www.irobot.com/en_US/deals.html" data-menu="1" target="_blank" class="menu-link">Deals &
-            Offers</a>
+        <a href="https://www.irobot.com/en_US/deals.html" data-menu="1" target="_blank" class="menu-link">Robot Vacuums
+            and Vacuums + Mops</a>
         <div class="submenu"></div>
-        <a href="https://www.irobot.com/en_US/shop/vacuum.html" data-menu="2" target="_blank" class="menu-link">Roomba®
-            Robot
-            Vacuums</a>
-        <div class="submenu"></div>
-        <a href="https://www.irobot.com/en_US/shop/combo.html" data-menu="3" target="_blank" class="menu-link">Roomba
-            Combo® Robot
-            Vacuums + Mops</a>
-        <div class="submenu"></div>
-        <a href="https://www.irobot.com/en_US/shop/combo.html" data-menu="4" target="_blank" class="menu-link">Braava
-            jet® Robot
+        <a href="https://www.irobot.com/en_US/shop/vacuum.html" data-menu="2" target="_blank" class="menu-link">Robot
             Mops</a>
         <div class="submenu"></div>
-        <a href="https://www.irobot.com/en_US/shop/products.html" data-menu="5" target="_blank" class="menu-link">Shop
-            all
-            Robots</a>
+        <a href="https://www.irobot.com/en_US/shop/combo.html" data-menu="3" target="_blank" class="menu-link">Buyers
+            Guide</a>
+        <div class="submenu"></div>
+        <a href="https://www.irobot.com/en_US/shop/combo.html" data-menu="4" target="_blank" class="menu-link">Pet
+            Owner</a>
+        <div class="submenu"></div>
+        <a href="https://www.irobot.com/en_US/shop/products.html" data-menu="5" target="_blank" class="menu-link">Busy
+            Family</a>
     </div>
-    <div class="container-category-info">
+    <div class="container-banner">
         <div class="banner">
             <div class="container-robot-item">
-                <img class="robot-image" data-robot="1" src="assets/robots/Roomba_j9+_m6.png" width="200px"
+                <img class="robot-image" data-robot="1" src="assets/robots/roombaCombo.png" width="200px"
                      height="200px"
                      alt="robot">
-                <img class="robot-image robot-hidden" data-robot="2" src="assets/robots/roomba.png" width="200px"
+                <img class="robot-image robot-hidden" data-robot="2" src="assets/robots/braavaJet.png" width="200px"
                      height="200px" alt="robot">
-                <img class="robot-image robot-hidden" data-robot="3" src="assets/robots/roombaCombo.png" width="200px"
+                <img class="robot-image robot-hidden" data-robot="3" src="assets/robots/s_series_1000x1000.png" width="200px"
                      height="200px" alt="robot">
-                <img class="robot-image robot-hidden" data-robot="4" src="assets/robots/braavaJet.png" width="200px"
+                <img class="robot-image robot-hidden" data-robot="4" src="assets/robots/RoombaCombo_PadLifting.png" width="200px"
                      height="200px" alt="robot">
                 <img class="robot-image robot-hidden" data-robot="5" src="assets/robots/RoombaCombo_PadLifting.png"
                      width="200px" height="200px" alt="robot">
             </div>
         </div>
+    </div>
+    <div class="container-category-info">
         <div class="category-details">
-            <div class="details-header">Smart Ways to Shop</div>
+            <div class="details-header">Explore More</div>
             <div class="details-subheader"></div>
             <div class="container-item-info">
-                <a class="info-link" href="https://www.irobot.com/en_US/gift-guide.html">Gift Guide</a>
-                <a class="info-link" href="https://www.irobot.com/en_US/comparison-chart.html">Compare Products</a>
-                <a class="info-link" href="https://www.irobot.com/en_US/help-me-choose.html">Help Me Choose</a>
-                <a class="info-link" href="https://www.irobot.com/en_US/trade-in.html?CFC=QL">Trade in</a>
-                <a class="info-link" href="https://www.irobot.com/en_US/why-irobot.html">Why Buy Direct</a>
-                <a class="info-link" href="https://www.irobot.com/en_US/affirm-financing.html">Financing</a>
+                <a class="info-link" href="https://www.irobot.com/en_US/deals.html">Deals & Offers</a>
+                <a class="info-link" href="https://www.irobot.com/en_US/shop/products.html">Shop all Robots</a>
+                <a class="info-link" href="https://www.irobot.com/en_US/accessories.html">Shop all Parts & Accessories</a>
+                <a class="info-link" href="https://www.irobot.com/en_US/Giftcards-Purchase">eGift Card</a>
+                <a class="info-link" href="https://www.irobot.com/en_US/Giftcards-Purchase">iRobot Home App</a>
+                <a class="info-link" href="https://www.irobot.com/en_US/irobot-home-app.html">iRobotOS</a>
             </div>
         </div>
-        <div class="promo-container">
-            <div class="promo-header">Holiday</div>
-            <div class="promo-content">Up to $400 off our Roomba® robots for a limited time.</div>
-            <div class="promo-button-container">
-                <a class="promo-button" href="https://www.irobot.com/en_US/deals.html" target="_blank">Shop now</a>
+    </div>
+    <div class="promo-container">
+        <div class="promo-header">Need help deciding?</div>
+        <div class="promo-content">Answer a few simple questions or compare our product lineup to find the right robot for you.</div>
+        <div class="promo-button-container">
+            <a class="promo-button promo-button__2" href="https://www.irobot.com/en_US/help-me-choose.html" target="_blank">Help Me Choose</a>
+            <a class="promo-button promo-button__2" href="https://www.irobot.com/en_US/comparison-chart.html" target="_blank">Compare products</a>
+        </div>
+    </div>
+</div>
+    <!-- 3 -->
+<div class="container-popup-menu container-popup-menu-last container-popup-menu-hidden" data-dropdown-menu="3">
+    <div class="popup-menu">
+        <a href="https://www.irobot.com/en_US/us/2-in-1-robot-accessories" data-menu="1" target="_blank" class="menu-link">2-in-1 Robot Accessories</a>
+        <div class="submenu"></div>
+        <a href="https://www.irobot.com/en_US/us/robot-vacuum-accessories" data-menu="2" target="_blank" class="menu-link">Robot Vacuum Accessories</a>
+        <div class="submenu"></div>
+        <a href="https://www.irobot.com/en_US/us/braava-accessories" data-menu="3" target="_blank" class="menu-link">Robot Mop Accessories</a>
+        <div class="submenu"></div>
+        <a href="https://www.irobot.com/en_US/us/handheld-vacuum-and-air-purifier-accessories-1" data-menu="4" target="_blank" class="menu-link">Handheld Vacuum & Air Purifier Accessories</a>
+        <div class="submenu"></div>
+        <a href="https://www.irobot.com/en_US/accessories.html" data-menu="5" target="_blank" class="menu-link">All Parts & Accessories</a>
+        <a href="https://www.irobot.com/en_US/accessory-deals.html" data-menu="6" target="_blank" class="menu-link">Accessory Deals & Offers</a>
+    </div>
+    <div class="container-banner">
+        <div class="banner">
+            <div class="container-robot-item">
+                <img class="robot-image" data-robot="1" src="assets/accessory/i3_i3+_i7_i7+_e5_e6_Photo_Studio_Replenishment_Kit_1000x1000.webp" width="200px"
+                     height="200px"
+                     alt="robot">
+                <img class="robot-image robot-hidden" data-robot="2" src="assets/accessory/i3_i3+_i7_i7+_e5_e6_Photo_Studio_Replenishment_Kit_1000x1000.webp" width="200px"
+                     height="200px" alt="robot">
+                <img class="robot-image robot-hidden" data-robot="3" src="assets/accessory/m6_Photo_SingleUse_WetPads_7stack_1000x1000.webp" width="200px"
+                     height="200px" alt="robot">
+                <img class="robot-image robot-hidden" data-robot="4" src="assets/accessory/NA_Handheld-Accessories_Nav.webp" width="200px"
+                     height="200px" alt="robot">
+                <img class="robot-image robot-hidden" data-robot="5" src="assets/accessory/s9_Accessory_Replenishment_Bundle_425x425.webp"
+                     width="200px" height="200px" alt="robot">
+                <img class="robot-image robot-hidden" data-robot="6" src="assets/accessory/j7plus_m6_Accessory_Replenishment_Bundle_Elco_400x400.webp"
+                     width="200px" height="200px" alt="robot">
+            </div>
+        </div>
+    </div>
+    <div class="container-category-info">
+        <div class="category-details">
+            <div class="details-header">Featured Products</div>
+            <div class="details-subheader"></div>
+            <div class="container-item-info">
+                <a class="info-link" href="https://www.irobot.com/en_US/replenishment-kit-for-roomba-combo-and-roomba-e%252c-i%252c-and-j-series/4757964.html">Replenishment Kit for Roomba Combo® and Roomba® e, i, and j series</a>
+                <a class="info-link" href="https://www.irobot.com/en_US/replacement-dirt-disposal-bags%2C-3-pack/4640235.html">Replacement Dirt Disposal Bags, 3-Pack</a>
+                <a class="info-link" href="https://www.irobot.com/en_US/high-efficiency-filter%252c-3-pack-for-roomba-combo-and-roomba-i%252c-e%252c-and-j-series/4639161.html">High-Efficiency Filters for Roomba® e, i, and j series, 3-Pack</a>
             </div>
         </div>
     </div>
 </div>
-
-<!-- CONTENT -->
-<div class="container-video">
-    <video class="content-video"
+<!-- VIDEO SECTION -->
+<div class="video-section">
+    <video class="hero-video"
            src="https://irobot.widen.net/content/l778jgouge/mp4/RoombaCombo_10Max_Video_Holiday_ToHaveAndToGive_8_HeroBanner_Desktop_NoAudio_NoText_3000x1000.mp4?quality=hd&u=6srsqg"
            autoplay="autoplay" muted playsinline loop>
     </video>
-    <div class="container-content">
-        <div class="container-eyebrow">
-            <div class="eyebrow">Holiday Savings</div>
+    <button class="controller-video-button">
+        <img src="assets/other/play.svg" width="20px" height="20px" alt="play">
+        <img class="inactive" src="assets/other/pause.svg" width="24px" height="24px" alt="pause">
+    </button>
+    <div class="video-overlay">
+        <div class="eyebrow-section">
+            <div class="eyebrow-text">Holiday Savings</div>
         </div>
         <h1>You welcome the guests, we'll take care of the mess</h1>
         <p>Roomba® keeps it shiny and bright</p>
-        <div class="container-btn-content">
-            <a class="btn-shop-robot" href="https://www.irobot.com/en_US/deals.html">Shop Robot Holiday Savings</a>
-            <a class="btn-shop-accessory" href="https://www.irobot.com/en_US/accessory-deals.html">Shop Accessory Holiday Savings</a>
+        <div class="button-section">
+            <a class="button-shop-robot" href="https://www.irobot.com/en_US/deals.html" target="_blank">Shop Robot Holiday Savings</a>
+            <a class="button-shop-accessory" href="https://www.irobot.com/en_US/accessory-deals.html" target="_blank">Shop Accessory Holiday Savings</a>
         </div>
+        <div class="offers-valid">Offers valid until 12/28/24</div>
     </div>
 </div>
 
 
 <script src="scripts/header.js"></script>
 <script src="scripts/navigation.js"></script>
+<script src="scripts/video-section.js"></script>
 </body>
 </html>

@@ -81,20 +81,25 @@
 }
 
 .minicart-icon {
+    background: url("../assets/other/minicart.svg") no-repeat center;
+    width: 24px;
+    height: 24px;
+
     margin-left: 10px;
 
     cursor: pointer;
 }
 
-/* CATEGORY SHOP */
+/* CATEGORIES */
 .container-popup-menu {
     position: absolute;
 
     display: flex;
-    width: clamp(100px, 100%, 1177px);
+    width: clamp(10px, 100%, 1200px);
     background-color: var(--color-white);
 
-    margin-left: 200px;
+    box-sizing: border-box;
+    margin-left: 180px;
     z-index: 1000;
 }
 
@@ -102,9 +107,16 @@
     display: none;
 }
 
+.container-popup-menu-last {
+    width: clamp(10px, 100%, 882px);
+}
+
 .popup-menu {
-    padding: 60px 40px 60px 60px;
-    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0 60px 60px;
+    margin-right: 30px;
+    width: clamp(10px, 100%, 300px);
 }
 
 .menu-link {
@@ -142,7 +154,13 @@
 
 .container-category-info {
     display: flex;
-    width: 100%;
+    width: clamp(10px, 100%, 300px);
+}
+
+.container-banner {
+    display: flex;
+    justify-content: center;
+    width: clamp(10px, 100%, 222px);
 }
 
 .banner {
@@ -179,17 +197,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: clamp(30px, 100%, 300px);
+    width: clamp(10px, 100%, 320px);
 
     padding-top: 60px;
 }
 
 .details-header {
     display: flex;
-    width: clamp(30px, 100%, 160px);
+    width: clamp(10px, 100%, 160px);
 
     font-family: 'PT Sans', Arial, sans-serif;
-    font-size: 21px;
+    font-size: 20px;
     flex-wrap: wrap;
     font-weight: 600;
     color: var(--color-forest-green);
@@ -198,7 +216,7 @@
 }
 
 .details-subheader {
-    width: clamp(30px, 100%, 160px);
+    width: clamp(10px, 100%, 160px);
     border: 1px solid var(--color-light-mint-grey);
 }
 
@@ -234,9 +252,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*flex-grow: 1;*/
-    height: 100%;
-    width: clamp(10px, 100%, 320px);
+    width: clamp(10px, 100%, 330px);
     background-color: var(--color-steel-grey);
 }
 
@@ -273,8 +289,11 @@
 
 .promo-button-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
+    gap: 25px;
 }
 
 .promo-button {
@@ -301,4 +320,13 @@
 .promo-button:hover {
     outline: 6px solid var(--color-muted-teal);
     transition: all .2s ease-in-out;
+}
+
+.promo-button__2 {
+    width: clamp(10px, 100%, 158px);
+    height: 58px;
+
+    border-radius: 37px;
+
+    font-size: 16px;
 }
