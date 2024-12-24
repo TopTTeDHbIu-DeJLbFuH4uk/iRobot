@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="styles/video-section.css">
     <link rel="stylesheet" href="styles/budget-section.css">
     <link rel="stylesheet" href="styles/featured-offer-section.css">
+    <!-- MOBILE STYLES -->
+    <link rel="stylesheet" href="mobile-adaptation/mobile-header.css">
+    <link rel="stylesheet" href="mobile-adaptation/mobile-navigation.css">
+    <link rel="stylesheet" href="mobile-adaptation/mobile-video-section.css">
+    <link rel="stylesheet" href="mobile-adaptation/mobile-budget-section.css">
 </head>
 <body>
 
@@ -70,8 +75,19 @@
         <a class="minicart-icon" href="https://www.irobot.com/en_US/cart" target="_blank"></a>
     </div>
 </nav>
+<!-- NAVIGATION MOBILE -->
+<div class="mobile-container-navigation">
+    <div class="mobile-navigation">
+        <img src="assets/other/burger.svg" width="26px" height="24px" alt="burger-menu">
+        <img src="assets/other/logo.svg" width="120px" height="28px" alt="logo">
+        <a class="mobile-minicart-icon" href="https://www.irobot.com/en_US/cart" target="_blank"></a>
+    </div>
+    <div class="mobile-container-nav-search">
+        <input class="mobile-nav-search" type="text" placeholder="Search">
+    </div>
+</div>
 <!-- CATEGORIES -->
-<!-- 1 -->
+    <!-- 1 -->
 <div class="container-popup-menu container-popup-menu-hidden" data-dropdown-menu="1">
     <div class="popup-menu">
         <a class="menu-link" href="https://www.irobot.com/en_US/deals.html" data-menu="1" target="_blank">Deals &
@@ -132,7 +148,7 @@
         </div>
     </div>
 </div>
-<!-- 2 -->
+    <!-- 2 -->
 <div class="container-popup-menu container-popup-menu-hidden" data-dropdown-menu="2">
     <div class="popup-menu">
         <a href="https://www.irobot.com/en_US/deals.html" data-menu="1" target="_blank" class="menu-link">Robot Vacuums
@@ -197,7 +213,7 @@
         </div>
     </div>
 </div>
-<!-- 3 -->
+    <!-- 3 -->
 <div class="container-popup-menu container-popup-menu-last container-popup-menu-hidden" data-dropdown-menu="3">
     <div class="popup-menu">
         <a href="https://www.irobot.com/en_US/us/2-in-1-robot-accessories" data-menu="1" target="_blank"
@@ -298,6 +314,29 @@
             <a class="lower-nav" href="https://www.irobot.com/en_US/deals.html" target="_blank">Holiday Savings</a>
         </div>
     </div>
+    <!--  MOBILE BUDGET SECTION  -->
+    <div class="mobile-container-lower-navigation">
+        <div class="mobile-lower-navigation-btn">Shop by Category
+            <div class="mobile-show-navigation">+</div>
+            <div class="mobile-show-navigation is-hidden">-</div>
+        </div>
+        <div class="mobile-lower-navigation mobile-lower-navigation-hidden">
+            <a class="mobile-lower-nav" href="https://www.irobot.com/en_US/shop/vacuum.html" target="_blank">Vacuums</a>
+            <div class="mobile-nav-separator"></div>
+            <a class="mobile-lower-nav" href="https://www.irobot.com/en_US/shop/combo.html" target="_blank">Vacuums +
+                Mops</a>
+            <div class="mobile-nav-separator"></div>
+            <a class="mobile-lower-nav" href="https://www.irobot.com/en_US/shop/mops.html" target="_blank">Mops</a>
+            <div class="mobile-nav-separator"></div>
+            <a class="mobile-lower-nav" href="https://www.irobot.com/en_US/accessories.html"
+               target="_blank">Accessories</a>
+            <div class="mobile-nav-separator"></div>
+            <a class="mobile-lower-nav" href="https://www.irobot.com/en_US/deals.html" target="_blank">Holiday
+                Savings</a>
+            <div class="mobile-nav-separator"></div>
+        </div>
+    </div>
+    <!-- BUDGET SECTION -->
     <div class="header-budget-section">
         <h1>A Roomba® robot for every budget</h1>
     </div>
@@ -317,28 +356,28 @@
     </div>
 </div>
 <!-- FEATURED OFFER SECTION -->
-<div class="featured-offer-banner">
-    <img class="banner-offer"
-         src="assets/holiday/2024_Holiday_Roomba_Combo_10_Max_Web_FeaturedOffer_StaticBanner_Desktop_3000x1000.webp"
-         alt="featured-banner">
-    <div class="container-featured-section">
-        <div class="container-offer-price-tag">
-            <div class="offer-price-tag">Lowest price of the season</div>
-        </div>
-        <h2 class="offer-title">Featured Offer: The <br>ultimate cleaning <br>experience is now $999.99</h2>
-        <div class="offer-subtitle">The Roomba Combo® 10 Max Robot comes with powerful debris pickup, SmartScrub
-            mopping, and the intelligence to clean itself—and your holiday mishaps.
-        </div>
-        <div class="offer-cta">Shop Now</div>
-    </div>
-</div>
-
-
+<!--<div class="featured-offer-banner">-->
+<!--    <img class="banner-offer"-->
+<!--         src="assets/holiday/2024_Holiday_Roomba_Combo_10_Max_Web_FeaturedOffer_StaticBanner_Desktop_3000x1000.webp"-->
+<!--         alt="featured-banner">-->
+<!--    <div class="container-featured-section">-->
+<!--        <div class="container-offer-price-tag">-->
+<!--            <div class="offer-price-tag">Lowest price of the season</div>-->
+<!--        </div>-->
+<!--        <h2 class="offer-title">Featured Offer: The <br>ultimate cleaning <br>experience is now $999.99</h2>-->
+<!--        <div class="offer-subtitle">The Roomba Combo® 10 Max Robot comes with powerful debris pickup, SmartScrub-->
+<!--            mopping, and the intelligence to clean itself—and your holiday mishaps.-->
+<!--        </div>-->
+<!--        <div class="offer-cta">Shop Now</div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 <script src="scripts/header.js"></script>
 <script src="scripts/navigation.js"></script>
 <script src="scripts/video-section.js"></script>
 <script src="scripts/featured-offer-section.js"></script>
+<!-- MOBILE SCRIPTS -->
+<script src="mobile-scripts/mobile-budget-section.js"></script>
 </body>
 </html>

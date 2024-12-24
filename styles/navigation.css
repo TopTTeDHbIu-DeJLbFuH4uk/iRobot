@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
 
-    padding: 30px 40px 28px 40px;
+    padding: 28px 40px 30px 40px;
     box-sizing: border-box;
 
     border-bottom: 2px solid var(--color-bright-green);
@@ -88,6 +88,10 @@
     margin-left: 10px;
 
     cursor: pointer;
+}
+
+.mobile-container-navigation {
+    display: none;
 }
 
 /* CATEGORIES */

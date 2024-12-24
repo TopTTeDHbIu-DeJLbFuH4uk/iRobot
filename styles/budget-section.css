@@ -12,6 +12,10 @@
     box-sizing: border-box;
 }
 
+.mobile-container-lower-navigation {
+    display: none;
+}
+
 .lower-navigation {
     display: flex;
     justify-content: space-around;

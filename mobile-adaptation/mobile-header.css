@@ -1,0 +1,51 @@
+@media screen and (max-width: 1600px) {
+
+    .site-header {
+        padding: 11px 20px;
+    }
+
+    .header-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header-carousel-container {
+        grid-column: 1;
+        justify-content: flex-start;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .header-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .header-carousel-container {
+        justify-content: center;
+    }
+
+    .header-carousel {
+        justify-content: center;
+    }
+
+    .header-navigation {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .carousel-item, .carousel-item > a {
+        align-self: center;
+        font-size: 8px;
+    }
+
+    /*.carousel-item-hidden {*/
+
+    /*}*/
+
+}

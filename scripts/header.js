@@ -6,17 +6,17 @@ const carouselItems = () => {
     });
 };
 
-let clearIntervalId = setInterval(() => {
-    carouselItems();
-}, 7000);
-
-const restartInterval = () => {
-    clearInterval(clearIntervalId);
-
-    clearIntervalId = setInterval(() => {
-        carouselItems();
-    }, 7000);
-};
+// let clearIntervalId = setInterval(() => {
+//     carouselItems();
+// }, 7000);
+//
+// const restartInterval = () => {
+//     clearInterval(clearIntervalId);
+//
+//     clearIntervalId = setInterval(() => {
+//         carouselItems();
+//     }, 7000);
+// };
 
 const arrowEls = [...document.querySelectorAll('.arrow')];
 
