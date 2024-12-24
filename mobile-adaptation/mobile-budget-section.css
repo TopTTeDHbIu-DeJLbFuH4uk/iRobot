@@ -1,3 +1,12 @@
+@media screen and (max-width: 1440px) {
+
+    .budget-card-image {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
 @media screen and (max-width: 768px) {
 
     .container-lower-navigation {
@@ -89,10 +98,16 @@
     }
 
     .header-budget-section > h1 {
+        text-align: center;
+
         padding: 0;
         margin-bottom: 30px;
 
         font-size: 30px;
+    }
+
+    .budget-cards {
+        display: block;
     }
 
     .budget-card-image {
@@ -100,6 +115,11 @@
         height: auto;
         gap: 20px;
         object-fit: cover;
+
+        margin-bottom: 20px;
     }
 
+    .budget-card-image > a:last-child {
+
+    }
 }

@@ -35,17 +35,21 @@
     color: var(--color-muted-blue-grey);
     text-align: center;
 
-    /*transition: opacity 500ms linear;*/
+    transition: opacity 500ms linear;
     opacity: 1;
     pointer-events: auto;
 }
 
-.carousel-item-hidden, .carousel-item-hidden > a {
+.carousel-item-hidden {
     position: absolute;
     width: clamp(100px, 100%, 500px);
 
-    /*transition: opacity 500ms linear;*/
+    transition: opacity 500ms linear;
     opacity: 0;
+    pointer-events: none;
+}
+
+.carousel-item-hidden > a {
     pointer-events: none;
 }
 
