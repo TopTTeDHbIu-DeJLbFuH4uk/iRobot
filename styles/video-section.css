@@ -91,7 +91,6 @@
     width: 100%;
     height: 100%;
 
-    font-family: 'PT Sans', Arial, sans-serif;
     font-size: 12px;
     font-weight: 600;
     color: var(--color-white);
@@ -100,7 +99,6 @@
 .video-overlay > h1 {
     width: clamp(10px, 100%, 650px);
 
-    font-family: 'PT Sans', Arial, sans-serif;
     font-size: 56px;
     font-weight: 600;
     color: var(--color-white);
@@ -109,7 +107,6 @@
 }
 
 .video-overlay > p {
-    font-family: 'PT Sans', Arial, sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: var(--color-white);
@@ -132,7 +129,6 @@
 
     padding: 16px 0 16px 0;
 
-    font-family: 'PT Sans', Arial, sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: var(--color-white);
@@ -157,7 +153,6 @@
 
     padding: 16px 0 16px 0;
 
-    font-family: 'PT Sans', Arial, sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: var(--color-white);
@@ -174,8 +169,66 @@
 .offers-valid {
     padding-top: 15px;
 
-    font-family: 'PT Sans', Arial, sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: var(--color-white);
+}
+
+@media screen and (max-width: 1440px) {
+
+    .video-overlay {
+        padding-left: 40px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .video-overlay {
+        padding-left: 30px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .video-overlay {
+        padding-left: 20px;
+    }
+
+    .eyebrow-section {
+        width: clamp(10px, 100%, 80px);
+        height: 14px;
+    }
+
+    .eyebrow-text {
+        font-size: 8px;
+    }
+
+    .button-shop-accessory {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+
+    .video-overlay {
+        padding-left: 10px;
+    }
+
+    .video-overlay > h1 {
+        font-size: 46px;
+    }
+
+    .controller-video-button {
+        height: 26px;
+        width: 26px;
+    }
+
+    .controller-video-button > img {
+        height: 14px;
+        width: 14px;
+    }
+
 }

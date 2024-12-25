@@ -1,6 +1,6 @@
 .container-budget-section {
     height: 100%;
-    margin-bottom: 74px;
+    margin-bottom: 42px;
 }
 
 .container-lower-navigation {
@@ -28,7 +28,6 @@
     padding-top: 28px;
     margin-bottom: 28px;
 
-    font-family: 'PT Sans', Arial, sans-serif;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -53,7 +52,6 @@
 }
 
 .header-budget-section > h1 {
-    font-family: 'PT Sans', Arial, sans-serif;
     font-size: 40px;
     font-weight: 700;
     color: var(--color-dark-grey);
@@ -74,4 +72,141 @@
 
 .budget-card-image {
     height: 213px;
+}
+
+@media screen and (max-width: 1440px) {
+
+    .budget-cards {
+        gap: 20px;
+    }
+
+    .budget-card-image {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .container-lower-navigation {
+        display: none;
+    }
+
+    .mobile-container-lower-navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+
+        padding: 32px 38px 0 38px;
+        box-sizing: border-box;
+    }
+
+    .mobile-lower-navigation-btn {
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 36px;
+        width: 100%;
+
+        border: 1px solid var(--color-deep-forest-green);
+        border-radius: 20px;
+
+        font-family: 'PT Sans', Arial, sans-serif;
+        font-size: 16px;
+        color: var(--color-deep-forest-green);
+        font-weight: 400;
+        line-height: 24px;
+
+        margin-bottom: 36px;
+
+        cursor: pointer;
+    }
+
+    .mobile-lower-navigation-btn:hover {
+        outline: 2px solid var(--color-muted-teal);
+        transition: all .2s ease-in-out;
+    }
+
+    .mobile-show-navigation {
+        position: absolute;
+        right: 20px;
+
+        align-self: center;
+
+        color: var(--color-deep-forest-green);
+    }
+
+    .is-hidden {
+        display: none;
+    }
+
+    .mobile-lower-navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        margin-bottom: 32px;
+    }
+
+    .mobile-lower-navigation-hidden {
+        display: none;
+    }
+
+    .mobile-lower-nav {
+        width: fit-content;
+
+        font-family: 'PT Sans', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--color-charcoal-grey);
+        text-decoration: none;
+
+        margin-bottom: 24px;
+        margin-top: 28px;
+    }
+
+    .mobile-nav-separator {
+        border-bottom: 1px solid var( --color-light-sage);
+        width: 100%;
+    }
+
+    .mobile-lower-nav:first-child {
+        margin-top: 0;
+    }
+
+    .mobile-lower-nav:last-child {
+        color: var(--color-red);
+    }
+
+    .header-budget-section > h1 {
+        text-align: center;
+
+        padding: 0;
+        margin-bottom: 30px;
+
+        font-size: 30px;
+    }
+
+    .budget-cards {
+        display: block;
+    }
+
+    .budget-card-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        gap: 0;
+
+        margin-bottom: 20px;
+    }
+
+    .budget-card-image > a:last-child {
+
+    }
 }

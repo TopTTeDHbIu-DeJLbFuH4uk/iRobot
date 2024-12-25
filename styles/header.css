@@ -28,7 +28,6 @@
 }
 
 .carousel-item, .carousel-item > a {
-    font-family: 'PT Sans', Arial, sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: normal;
@@ -63,7 +62,7 @@
 .nav-link {
     display: flex;
     align-items: center;
-    font-family: 'PT Sans', Arial, sans-serif;
+
     font-size: 14px;
     color: var(--color-muted-blue-grey);
     line-height: normal;
@@ -140,7 +139,6 @@
     gap: 8px;
 
     font-size: 14px;
-    font-family: 'PT Sans', Arial, sans-serif;
     color: var(--color-dark-grey);
 
     cursor: pointer;
@@ -159,3 +157,58 @@
     display: none;
 }
 
+@media screen and (max-width: 1600px) {
+
+    .site-header {
+        padding: 11px 20px;
+    }
+
+    .header-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header-carousel-container {
+        grid-column: 1;
+        justify-content: flex-start;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .site-header {
+        height: 20px;
+    }
+
+    .header-wrapper {
+        display: flex;
+        height: 100%;
+    }
+
+    .header-carousel-container {
+        justify-content: center;
+    }
+
+    .header-carousel {
+        justify-content: center;
+    }
+
+    .header-navigation {
+        display: none;
+    }
+
+    .carousel-item, .carousel-item > a {
+        align-self: center;
+        font-size: 11px;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+
+    .carousel-item, .carousel-item > a {
+        align-self: center;
+        font-size: 8px;
+    }
+
+}
