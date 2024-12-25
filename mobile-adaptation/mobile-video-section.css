@@ -12,42 +12,12 @@
         padding-left: 30px;
     }
 
-    .video-overlay > h1 {
-        font-size: 27px;
-        width: clamp(10px, 100%, 300px);
-    }
-
-    .video-overlay > p {
-        margin: 7px 0 7px 0;
-    }
-
-    .eyebrow-section {
-        margin-bottom: 6px;
-    }
-
-    .button-shop-accessory {
-        display: none;
-    }
-
-    .offers-valid {
-        padding: 7px 0 7px 0;
-    }
-
 }
 
 @media screen and (max-width: 768px) {
 
     .video-overlay {
         padding-left: 20px;
-    }
-
-    .video-overlay > h1 {
-        font-size: 16px;
-        width: clamp(10px, 100%, 200px);
-    }
-
-    .video-overlay > p {
-        font-size: 10px;
     }
 
     .eyebrow-section {
@@ -59,57 +29,30 @@
         font-size: 8px;
     }
 
-    .button-shop-robot {
-        width: clamp(20px, 100%, 120px);
-        border-radius: 27px;
-
-        padding: 8px 0 8px 0;
-
-        font-size: 8px;
-    }
-
-    .offers-valid {
-        font-size: 10px;
+    .button-shop-accessory {
+        display: none;
     }
 
 }
 
 @media screen and (max-width: 425px) {
 
-    .eyebrow-section {
-        width: clamp(10px, 100%, 30px);
-        height: 8px;
-        border-radius: 2px;
-
-        margin-bottom: 2px;
-    }
-
-    .eyebrow-text {
-        font-size: 4px;
+    .video-overlay {
+        padding-left: 10px;
     }
 
     .video-overlay > h1 {
-        font-size: 12px;
-        width: clamp(10px, 100%, 100px);
+        font-size: 46px;
     }
 
-    .video-overlay > p {
-        font-size: 4px;
-        margin: 4px 0 4px 0;
+    .controller-video-button {
+        height: 26px;
+        width: 26px;
     }
 
-    .button-shop-robot {
-        width: clamp(20px, 100%, 60px);
-        border-radius: 27px;
-
-        padding: 2px 0 2px 0;
-
-        font-size: 4px;
-    }
-
-    .offers-valid {
-        font-size: 4px;
-        padding: 4px 0 4px 0;
+    .controller-video-button > img {
+        height: 14px;
+        width: 14px;
     }
 
 }

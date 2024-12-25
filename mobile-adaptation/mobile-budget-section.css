@@ -1,5 +1,9 @@
 @media screen and (max-width: 1440px) {
 
+    .budget-cards {
+        gap: 20px;
+    }
+
     .budget-card-image {
         width: 100%;
         height: auto;
@@ -43,6 +47,13 @@
         line-height: 24px;
 
         margin-bottom: 36px;
+
+        cursor: pointer;
+    }
+
+    .mobile-lower-navigation-btn:hover {
+        outline: 2px solid var(--color-muted-teal);
+        transition: all .2s ease-in-out;
     }
 
     .mobile-show-navigation {
@@ -111,10 +122,10 @@
     }
 
     .budget-card-image {
+        display: block;
         width: 100%;
         height: auto;
-        gap: 20px;
-        object-fit: cover;
+        gap: 0;
 
         margin-bottom: 20px;
     }

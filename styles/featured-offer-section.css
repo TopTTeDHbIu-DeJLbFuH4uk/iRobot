@@ -11,8 +11,10 @@
 }
 
 .banner-offer {
+    background: url("../assets/holiday/2024_Holiday_Roomba_Combo_10_Max_Web_FeaturedOffer_StaticBanner_Desktop_3000x1000.webp") no-repeat center;
+    object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: 626px;
 }
 
 .container-featured-section {
@@ -22,7 +24,7 @@
     flex-direction: column;
     justify-content: center;
     width: clamp(100px, 100%, 608px);
-    height: 100%;
+    height: 626px;
 
     padding-left: 120px;
 }
@@ -79,9 +81,3 @@
     padding-bottom: 2px;
 }
 
-
-.test {
-    z-index: 1000;
-    color: black;
-    padding-top: 64px;
-}
