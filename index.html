@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="styles/video-section.css">
     <link rel="stylesheet" href="styles/budget-section.css">
     <link rel="stylesheet" href="styles/featured-offer-section.css">
+    <link rel="stylesheet" href="styles/products-section.css">
+    <link rel="stylesheet" href="styles/marketing.css">
 </head>
 <body>
 
@@ -20,7 +22,7 @@
 <header class="site-header">
     <div class="header-wrapper">
         <div class="header-carousel-container">
-            <img class="arrow" src="assets/other/arrow-left.svg" width="16px" height="16px" alt="arrow-left">
+            <img class="icon-arrow" src="assets/other/arrow-left.svg" width="16px" height="16px" alt="arrow-left">
             <div class="header-carousel">
                 <div class="carousel-item">Order by 12/19/24 at 11:59 PM EST for 2-day shipping on all robot
                     orders for delivery by 12/24/24.
@@ -36,7 +38,7 @@
                     </a>
                 </div>
             </div>
-            <img class="arrow" src="assets/other/arrow-right.svg" width="16px" height="16px" alt="arrow-right">
+            <img class="icon-arrow" src="assets/other/arrow-right.svg" width="16px" height="16px" alt="arrow-right">
         </div>
         <nav class="header-navigation">
             <a class="nav-link" href="https://homesupport.irobot.com/s/" target="_blank">Support</a>
@@ -70,7 +72,7 @@
         <a class="minicart-icon" href="https://www.irobot.com/en_US/cart" target="_blank"></a>
     </div>
 </nav>
-<!-- NAVIGATION MOBILE -->
+<!-- MOBILE NAVIGATION -->
 <div class="mobile-container-navigation">
     <div class="mobile-navigation">
         <img src="assets/other/burger.svg" width="26px" height="24px" alt="burger-menu">
@@ -82,7 +84,7 @@
     </div>
 </div>
 <!-- CATEGORIES -->
-    <!-- 1 -->
+<!--  1 -->
 <div class="container-popup-menu container-popup-menu-hidden" data-dropdown-menu="1">
     <div class="popup-menu">
         <a class="menu-link" href="https://www.irobot.com/en_US/deals.html" data-menu="1" target="_blank">Deals &
@@ -143,7 +145,7 @@
         </div>
     </div>
 </div>
-    <!-- 2 -->
+<!--  2 -->
 <div class="container-popup-menu container-popup-menu-hidden" data-dropdown-menu="2">
     <div class="popup-menu">
         <a href="https://www.irobot.com/en_US/deals.html" data-menu="1" target="_blank" class="menu-link">Robot Vacuums
@@ -208,7 +210,7 @@
         </div>
     </div>
 </div>
-    <!-- 3 -->
+<!--  3 -->
 <div class="container-popup-menu container-popup-menu-last container-popup-menu-hidden" data-dropdown-menu="3">
     <div class="popup-menu">
         <a href="https://www.irobot.com/en_US/us/2-in-1-robot-accessories" data-menu="1" target="_blank"
@@ -274,17 +276,17 @@
     </div>
 </div>
 <!-- VIDEO SECTION -->
-<div class="video-section">
+<div class="content-video">
     <video class="hero-video"
            src="https://irobot.widen.net/content/l778jgouge/mp4/RoombaCombo_10Max_Video_Holiday_ToHaveAndToGive_8_HeroBanner_Desktop_NoAudio_NoText_3000x1000.mp4?quality=hd&u=6srsqg"
            autoplay="autoplay" muted playsinline loop>
     </video>
-    <button class="controller-video-button">
+    <button class="control-btn">
         <img src="assets/other/play.svg" width="20px" height="20px" alt="play">
         <img class="inactive" src="assets/other/pause.svg" width="24px" height="24px" alt="pause">
     </button>
     <div class="video-overlay">
-        <div class="eyebrow-section">
+        <div class="eyebrow">
             <div class="eyebrow-text">Holiday Savings</div>
         </div>
         <h1>You welcome the guests, we'll take care of the mess</h1>
@@ -299,7 +301,7 @@
     </div>
 </div>
 <!-- BUDGET SECTION -->
-<div class="container-budget-section">
+<div class="section">
     <div class="container-lower-navigation">
         <div class="lower-navigation">
             <a class="lower-nav" href="https://www.irobot.com/en_US/shop/vacuum.html" target="_blank">Vacuums</a>
@@ -332,28 +334,32 @@
         </div>
     </div>
     <!-- BUDGET SECTION -->
-    <div class="header-budget-section">
+    <div class="budget-header">
         <h1>A Roomba® robot for every budget</h1>
     </div>
-    <div class="budget-cards">
+    <div class="budget-cards-container">
         <a href="https://www.irobot.com/en_US/gift-guide.html#budget" target="_blank">
-            <img class="budget-card-image"
+            <img class="budget-card"
                  src="assets/holiday/Holiday_Homepage_ContentTile_Image_Price_US_299_3000x1500.webp" alt="card">
         </a>
         <a href="https://www.irobot.com/en_US/gift-guide.html#midrange" target="_blank">
-            <img class="budget-card-image"
+            <img class="budget-card"
                  src="assets/holiday/Holiday_Homepage_ContentTile_Image_Price_US_300_3000x1500.webp" alt="card">
         </a>
         <a href="https://www.irobot.com/en_US/gift-guide.html#premium" target="_blank">
-            <img class="budget-card-image"
+            <img class="budget-card"
                  src="assets/holiday/Holiday_Homepage_ContentTile_Image_Price_US_600_3000x1500.webp" alt="card">
         </a>
     </div>
 </div>
 <!-- FEATURED OFFER SECTION -->
 <div class="featured-offer-banner">
-    <img class="banner-offer" src="assets/holiday/2024_Holiday_Roomba_Combo_10_Max_Web_FeaturedOffer_StaticBanner_Desktop_3000x1000.webp" alt="">
-    <img class="mobile-banner-offer" src="assets/holiday/2024_Holiday_Roomba_Combo_10_Max_Web_FeaturedOffer_StaticBanner_Mobile_1500x1500.webp" alt="">
+    <img class="banner-offer"
+         src="assets/holiday/2024_Holiday_Roomba_Combo_10_Max_Web_FeaturedOffer_StaticBanner_Desktop_3000x1000.webp"
+         alt="">
+    <img class="mobile-banner-offer"
+         src="assets/holiday/2024_Holiday_Roomba_Combo_10_Max_Web_FeaturedOffer_StaticBanner_Mobile_1500x1500.webp"
+         alt="">
     <div class="container-featured-section">
         <div class="container-offer-price-tag">
             <div class="offer-price-tag">Lowest price of the season</div>
@@ -365,6 +371,76 @@
         <div class="offer-cta">Shop Now</div>
     </div>
 </div>
+<!-- PRODUCTS SECTION -->
+<div class="products-section">
+    <h1>We’ll get you time back for what matters most</h1>
+    <section class="section-video">
+        <div class="video-card">
+            <video src="https://irobot.widen.net/content/9kqoyij3ze/mp4/Roomba_j9-_Video_ProductOverview_Homepage_3_Gradient_NoAudio_NoText_810x1080.mp4?quality=hd&u=3jnuwi"
+                   autoplay="autoplay" muted playsinline loop>
+            </video>
+            <button class="control-btn">
+                <img src="assets/other/play.svg" width="20px" height="20px" alt="play">
+                <img class="inactive" src="assets/other/pause.svg" width="24px" height="24px" alt="pause">
+            </button>
+            <div class="content-block">
+                <h2 class="video-caption">Your go-to that tackles pesky pet hair with ease</h2>
+                <p class="price">$599.99
+                    <s>$899.99</s>
+                </p>
+                <a href="https://www.irobot.com/en_US/roomba-j9plus-self-emptying-robot-vacuum/J955020.html" target="_blank">Shop Roomba® j9+</a>
+            </div>
+        </div>
+        <div class="video-card">
+            <video src="https://irobot.widen.net/content/aymfzinq1d/mp4/RoombaCombo_j5_Video_ProductOverview_Homepage_3_Gradient_NoText_NoAudio_810x1080.mp4?quality=hd&u=3jnuwi"
+                   autoplay="autoplay" muted playsinline loop></video>
+            <button class="control-btn">
+                <img src="assets/other/play.svg" width="20px" height="20px" alt="play">
+                <img class="inactive" src="assets/other/pause.svg" width="24px" height="24px" alt="pause">
+            </button>
+            <div class="content-block">
+                <h2 class="video-caption">Your trusted clean-up companion</h2>
+                <p class="price">$399.99
+                    <s>$729.99</s>
+                </p>
+                <a href="https://www.irobot.com/en_US/roomba-combo-j5plus-self-emptying-robot-vacuum-and-mop/J557020.html" target="_blank">Shop Roomba Combo® j5+</a>
+            </div>
+        </div>
+        <div class="video-card">
+            <video src="https://irobot.widen.net/content/ojqqwmvqne/mp4/RoombaCombo_10Max_Holiday_Video_PadLifting_LivingRoom_Homepage_7_Gradient_810x1080.mp4?quality=hd&u=3jnuwi"
+                   autoplay="autoplay" muted playsinline loop></video>
+            <button class="control-btn">
+                <img src="assets/other/play.svg" width="20px" height="20px" alt="play">
+                <img class="inactive" src="assets/other/pause.svg" width="24px" height="24px" alt="pause">
+            </button>
+            <div class="content-block">
+                <h2 class="video-caption"> Your champion for the season’s toughest messes</h2>
+                <p class="price">$999.99
+                    <s>$1,399.99</s>
+                </p>
+                <a href="https://www.irobot.com/en_US/roomba-combo-10-max-robot-with-autowash-dock/X085020.html" target="_blank">Shop Roomba Combo® 10 Max</a>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- MARKETING -->
+<div class="container-marketing">
+    <img class="marketing-banner" src="assets/other/Amazon_Accessories_Banner_BlankCenter_Desktop_3000x600.webp"
+         alt="marketing-banner">
+    <div class="content-block content-block--indent">
+        <div class="eyebrow">
+            <div class="eyebrow-text">Holiday Savings</div>
+        </div>
+        <h2 class="discount">Save up to 25% on accessories</h2>
+        <p>Gift your cleaning companion must-haves for peak performance</p>
+        <div class="container-btn-discounts">
+            <a class="btn-discount background--green" href="https://www.irobot.com/en_US/accessory-deals.html" target="_blank">Save 25%</a>
+            <a class="btn-discount background--transparent" href="https://www.irobot.com/en_US/accessories.html" target="_blank">Save 15%</a>
+        </div>
+        <p class="offer">Offers valid until 01/04/25</p>
+    </div>
+</div>
+
 
 
 <script src="scripts/header.js"></script>
@@ -375,3 +451,10 @@
 <script src="mobile-scripts/mobile-budget-section.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+

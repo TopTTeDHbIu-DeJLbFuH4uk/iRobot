@@ -1,12 +1,14 @@
 const heroVideoEl = document.querySelector('.hero-video');
-const playersEls = [...document.querySelectorAll('.controller-video-button > img')];
-const controllerVideoButtonEl = document.querySelector('.controller-video-button');
+// const videosEls = [...document.querySelectorAll('video')];
+
+const playersEls = [...document.querySelectorAll('.control-btn > img')];
+const controlBtnEl = document.querySelector('.control-btn');
 
 document.addEventListener('click', e => handlerVideo(e));
 
 const handlerVideo = e => {
 
-    const controllerVideoButton = e.target.closest('.controller-video-button');
+    const controllerVideoButton = e.target.closest('.control-btn');
     const video = e.target.closest('.hero-video');
     const videoOverlay = e.target.closest('.video-overlay');
 
@@ -20,7 +22,7 @@ const handlerVideo = e => {
         controllerVideoButton.classList.add('is-active');
     }
     if (!controllerVideoButton) {
-        controllerVideoButtonEl.classList.remove('is-active');
+        controlBtnEl.classList.remove('is-active');
     }
 
     if (controllerVideoButton || video || videoOverlay) {

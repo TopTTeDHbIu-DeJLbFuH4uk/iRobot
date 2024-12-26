@@ -1,0 +1,59 @@
+.container-marketing {
+    display: flex;
+    width: 100%;
+}
+
+.marketing-banner {
+    width: 100%;
+
+    margin-bottom: 80px;
+}
+
+.content-block--indent {
+    padding: 10px 0 10px 0;
+}
+
+.discount {
+    text-align: center;
+    margin-bottom: 8px;
+    width: clamp(100px, 100%, 608px);
+}
+
+.content-block > p {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+}
+
+.container-btn-discounts {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: clamp(100px, 100%, 628px);
+
+    margin-bottom: 8px;
+}
+
+.btn-discount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: clamp(50px, 100%, 133px);
+    height: 52px;
+    border-radius: 37px;
+
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.offer {
+    color: var(--color-dark-slate);
+}
+
+@media screen and (max-width: 1440px) {
+
+    .discount {
+        font-size: 30px;
+    }
+
+}

@@ -4,3 +4,38 @@ body {
 
     font-family: 'PT Sans', Arial, sans-serif;
 }
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--color-dark-grey);
+    margin: 0;
+}
+
+h2 {
+    font-size: 48px;
+    color: var(--color-dark-slate);
+    margin: 0 0 18px 0;
+}
+
+.background--green {
+    background-color: var(--color-forest-green);
+    color: var(--color-white);
+}
+
+.background--transparent {
+    background-color: transparent;
+    border: 2px solid var(--color-forest-green);
+    color: var(--color-forest-green);
+    box-sizing: border-box;
+}
+
+.background--green:hover {
+    transition: all .2s ease-in-out;
+    outline: 6px solid var(--color-pale-green);
+}
+
+.background--transparent:hover {
+    transition: all .2s ease-in-out;
+    outline: 6px solid var(--color-pale-green);
+}

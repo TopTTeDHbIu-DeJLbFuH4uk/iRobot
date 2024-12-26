@@ -1,4 +1,4 @@
-.video-section {
+.content-video {
     position: relative;
 
     display: flex;
@@ -7,7 +7,7 @@
     border-bottom: 1px solid var(--color-black);
 }
 
-.video-section::before {
+.content-video::before {
     position: absolute;
     content: '';
     background-color: rgba(0, 0, 0, 0.3);
@@ -26,7 +26,7 @@
     width: 100%;
 }
 
-.controller-video-button {
+.control-btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -45,11 +45,11 @@
     cursor: pointer;
 }
 
-.controller-video-button > img:first-child {
+.control-btn > img:first-child {
     padding-left: 2px;
 }
 
-.controller-video-button:hover {
+.control-btn:hover {
     transition: all .2s ease-in-out;
     outline-offset: -3px;
     outline: 9px solid hsla(0, 0%, 100%, .3);
@@ -75,7 +75,7 @@
     z-index: 1;
 }
 
-.eyebrow-section {
+.eyebrow {
     width: clamp(10px, 100%, 107px);
     height: 22px;
     background-color: var(--color-red);
@@ -196,7 +196,7 @@
         padding-left: 20px;
     }
 
-    .eyebrow-section {
+    .eyebrow {
         width: clamp(10px, 100%, 80px);
         height: 14px;
     }
@@ -221,12 +221,12 @@
         font-size: 46px;
     }
 
-    .controller-video-button {
+    .control-btn {
         height: 26px;
         width: 26px;
     }
 
-    .controller-video-button > img {
+    .control-btn > img {
         height: 14px;
         width: 14px;
     }

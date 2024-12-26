@@ -12,7 +12,7 @@
 
 .banner-offer {
     object-fit: cover;
-    height: 626px;
+    height: 726px;
     width: 100%;
 }
 
@@ -27,7 +27,7 @@
     flex-direction: column;
     justify-content: center;
     width: clamp(100px, 100%, 608px);
-    height: 626px;
+    height: 726px;
 
     padding-left: 120px;
 }

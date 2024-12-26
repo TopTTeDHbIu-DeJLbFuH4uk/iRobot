@@ -10,3 +10,5 @@ mobileLowerNavigationBtnEl.addEventListener('click', () => {
         el.classList.toggle('is-hidden');
     });
 });
+
+

@@ -18,7 +18,7 @@ const restartInterval = () => {
     }, 7000);
 };
 
-const arrowEls = [...document.querySelectorAll('.arrow')];
+const arrowEls = [...document.querySelectorAll('.icon-arrow')];
 
 arrowEls.forEach(arrow => {
     arrow.addEventListener('click', () => {

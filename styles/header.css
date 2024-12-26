@@ -17,7 +17,7 @@
     justify-content: center;
 }
 
-.arrow {
+.icon-arrow {
     align-self: center;
     cursor: pointer;
 }
@@ -156,6 +156,8 @@
 .country-selector-hidden {
     display: none;
 }
+
+/*------------------------------------------------------------*/
 
 @media screen and (max-width: 1600px) {
 
