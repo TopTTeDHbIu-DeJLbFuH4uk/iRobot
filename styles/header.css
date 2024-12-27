@@ -1,76 +1,83 @@
-.site-header {
+.header {
     padding: 8px 40px;
-    background-color: var(--color-light-green);
+    background-color: #dce9d5;
 }
 
-.header-wrapper {
+.header_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.header-carousel-container {
+.header_slider_container {
     position: relative;
 
     grid-column: 2 / 3;
+
     display: flex;
     width: 100%;
     justify-content: center;
+    align-items: center;
 }
 
-.icon-arrow {
-    align-self: center;
+.arrow {
+    width: 16px;
+    height: 16px;
+
     cursor: pointer;
 }
 
-.header-carousel {
+.arrow_left {
+    background: url("../assets/other/arrow-left.svg") center no-repeat;
+    background-size: cover;
+}
+
+.arrow_right {
+    background: url("../assets/other/arrow-right.svg") center no-repeat;
+    background-size: cover;
+}
+
+.header_slider {
     display: flex;
     width: clamp(100px, 100%, 500px);
 }
 
-.carousel-item, .carousel-item > a {
+.slider_item {
+    width: clamp(100px, 100%, 500px);
+
     font-size: 14px;
     font-weight: 600;
-    line-height: normal;
-    color: var(--color-muted-blue-grey);
+    color: #596273;
     text-align: center;
-
-    transition: opacity 500ms linear;
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.carousel-item-hidden {
-    position: absolute;
-    width: clamp(100px, 100%, 500px);
 
     transition: opacity 500ms linear;
     opacity: 0;
     pointer-events: none;
 }
 
-.carousel-item-hidden > a {
-    pointer-events: none;
+.slider_item_link {
+    color: #596273;
 }
 
-.header-navigation {
+.slider_item_active {
+    position: absolute;
+
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.header_nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 15px;
 }
 
-.nav-link {
+.header_link {
     display: flex;
     align-items: center;
-
-    font-size: 14px;
-    color: var(--color-muted-blue-grey);
-    line-height: normal;
-    text-decoration: none;
-    cursor: pointer;
 }
 
-.nav-link-login::before {
+.header_link:nth-child(3)::before {
     content: '';
     background: url("../assets/other/login.svg") no-repeat center;
     width: 16px;
@@ -79,25 +86,27 @@
     padding-right: 6px;
 }
 
-.nav-link-wishlist {
-    position: relative;
-
-    display: flex;
-    align-items: center;
+.link {
+    font-size: 14px;
+    color: #596273;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.wishlist-icon {
+.language_selection {
+    display: flex;
+
+    cursor: pointer;
+}
+
+.wishlist {
+    background: url("../assets/other/wishlist.svg") no-repeat center;
+    background-size: cover;
     width: 16px;
     height: 16px;
 }
 
-.nav-link-language {
-    position: relative;
-    margin-left: 15px;
-    box-sizing: border-box;
-}
-
-.nav-link-language::before {
+.language_selection:last-child::before {
     content: '';
     background: url("../assets/other/language.svg") no-repeat center;
     width: 16px;
@@ -107,7 +116,7 @@
     margin-right: 5px;
 }
 
-.nav-link-language::after {
+.language_selection:last-child::after {
     content: '';
     background: url("../assets/other/countrySelectror.svg") no-repeat center;
     width: 16px;
@@ -118,33 +127,45 @@
     margin-top: 2px;
 }
 
-.dropdown-country-selector {
+.selected_language {
+    font-size: 14px;
+    color: #596273;
+    cursor: pointer;
+}
+
+.language_selection_option {
     position: absolute;
+
+    display: none;
     width: clamp(220px, 100%, 220px);
     box-sizing: border-box;
 
-    background-color: var(--color-white);
-    border: 1px solid var(--color-light-grey);
+    background-color: #ffffff;
+    border: 1px solid #d9d9d9;
     padding: 25px 20px;
-    top: 20px;
-    right: 0;
+    top: 40px;
+    right: 30px;
     z-index: 10;
 
     cursor: auto;
 }
 
-.dropdown-item {
+.list_active {
+    display: block;
+}
+
+.language {
     display: flex;
     width: fit-content;
     gap: 8px;
 
     font-size: 14px;
-    color: var(--color-dark-grey);
+    color: #3C4453;
 
     cursor: pointer;
 }
 
-.dropdown-item::before {
+.language::before {
     content: '';
     background: url("../assets/other/russian-flag.svg") no-repeat center;
     width: 16px;
@@ -153,23 +174,19 @@
     align-self: center;
 }
 
-.country-selector-hidden {
-    display: none;
-}
-
-/*------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 1600px) {
 
-    .site-header {
+    .header {
         padding: 11px 20px;
     }
 
-    .header-wrapper {
+    .header_container {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .header-carousel-container {
+    .header_slider_container {
         grid-column: 1;
         justify-content: flex-start;
     }
@@ -178,28 +195,28 @@
 
 @media screen and (max-width: 1024px) {
 
-    .site-header {
+    .header {
         height: 20px;
     }
 
-    .header-wrapper {
+    .header_container {
         display: flex;
         height: 100%;
     }
 
-    .header-carousel-container {
+    .header_slider_container {
         justify-content: center;
     }
 
-    .header-carousel {
+    .header_slider {
         justify-content: center;
     }
 
-    .header-navigation {
+    .header_nav {
         display: none;
     }
 
-    .carousel-item, .carousel-item > a {
+    .slider_item, .slider_item > a {
         align-self: center;
         font-size: 11px;
     }
@@ -208,7 +225,7 @@
 
 @media screen and (max-width: 425px) {
 
-    .carousel-item, .carousel-item > a {
+    .slider_item, .slider_item > a {
         align-self: center;
         font-size: 8px;
     }

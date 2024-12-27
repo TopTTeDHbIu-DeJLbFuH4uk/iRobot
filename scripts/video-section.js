@@ -1,7 +1,5 @@
-const heroVideoEl = document.querySelector('.hero-video');
-// const videosEls = [...document.querySelectorAll('video')];
-
 const playersEls = [...document.querySelectorAll('.control-btn > img')];
+const heroVideoEl = document.querySelector('.hero-video');
 const controlBtnEl = document.querySelector('.control-btn');
 
 document.addEventListener('click', e => handlerVideo(e));
@@ -9,7 +7,6 @@ document.addEventListener('click', e => handlerVideo(e));
 const handlerVideo = e => {
 
     const controllerVideoButton = e.target.closest('.control-btn');
-    const video = e.target.closest('.hero-video');
     const videoOverlay = e.target.closest('.video-overlay');
 
     const selection = window.getSelection();
@@ -25,8 +22,7 @@ const handlerVideo = e => {
         controlBtnEl.classList.remove('is-active');
     }
 
-    if (controllerVideoButton || video || videoOverlay) {
-
+    if (controllerVideoButton || videoOverlay) {
 
         if (heroVideoEl.paused) {
             heroVideoEl.play();
@@ -43,3 +39,23 @@ const handlerVideo = e => {
     }
 };
 
+const videosEls = [...document.querySelectorAll('.video-card > video')];
+
+videosEls.forEach(video => {
+    video.addEventListener('click', e => {
+
+        const video = e.target.closest('video');
+        const videoId = video.dataset.video;
+
+        if (videoId === video.getAttribute('data-video')) {
+
+            if (video.paused) {
+                video.play();
+
+            } else {
+                video.pause();
+            }
+        }
+
+    });
+})
