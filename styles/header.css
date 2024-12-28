@@ -22,7 +22,6 @@
 .arrow {
     width: 16px;
     height: 16px;
-
     cursor: pointer;
 }
 
@@ -42,6 +41,8 @@
 }
 
 .slider_item {
+    position: absolute;
+
     width: clamp(100px, 100%, 500px);
 
     font-size: 14px;
@@ -59,8 +60,7 @@
 }
 
 .slider_item_active {
-    position: absolute;
-
+    position: static;
     opacity: 1;
     pointer-events: auto;
 }
