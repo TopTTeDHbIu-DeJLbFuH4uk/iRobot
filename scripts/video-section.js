@@ -1,61 +1,48 @@
-const playersEls = [...document.querySelectorAll('.control-btn > img')];
-const heroVideoEl = document.querySelector('.hero-video');
-const controlBtnEl = document.querySelector('.control-btn');
+const playPauseBtnEl = document.querySelector('.play_pause_btn');
+const videoEl = document.querySelector('.video');
+const videoContentEl = document.querySelector('.video_content');
+const playEl = document.querySelector('.play');
+const pauseEl = document.querySelector('.pause');
+const shopBtnEls = [...document.querySelectorAll('.shop_btn')];
 
-document.addEventListener('click', e => handlerVideo(e));
+playPauseBtnEl.addEventListener('click', e => handlerVideo(e));
 
-const handlerVideo = e => {
+videoContentEl.addEventListener('click', e => handlerVideo(e));
 
-    const controllerVideoButton = e.target.closest('.control-btn');
-    const videoOverlay = e.target.closest('.video-overlay');
+const handlerVideo = (e) => {
+    const path = e.composedPath();
+
+    const isClickBtnShop = path.some(el => {return shopBtnEls.includes(el)});
+
+    if (isClickBtnShop) return;
+
+    if (path.includes(playPauseBtnEl)) {
+        playPauseBtnEl.classList.add('play_pause_outline');
+    }
 
     const selection = window.getSelection();
-
     if (selection.toString().length > 0) {
         return;
     }
 
-    if (controllerVideoButton) {
-        controllerVideoButton.classList.add('is-active');
-    }
-    if (!controllerVideoButton) {
-        controlBtnEl.classList.remove('is-active');
-    }
+    if (videoEl.paused) {
+        videoEl.play();
 
-    if (controllerVideoButton || videoOverlay) {
+        playEl.classList.remove('hidden');
+        pauseEl.classList.add('hidden');
 
-        if (heroVideoEl.paused) {
-            heroVideoEl.play();
+        if (path.includes(videoContentEl)) {
+            playPauseBtnEl.classList.remove('play_pause_outline');
+        }
 
-            playersEls[0].classList.remove('inactive');
-            playersEls[1].classList.add('inactive');
+    } else {
+        videoEl.pause();
 
-        } else {
-            heroVideoEl.pause();
+        playEl.classList.add('hidden');
+        pauseEl.classList.remove('hidden');
 
-            playersEls[0].classList.add('inactive');
-            playersEls[1].classList.remove('inactive');
+        if (path.includes(videoContentEl)) {
+            playPauseBtnEl.classList.remove('play_pause_outline');
         }
     }
 };
-
-const videosEls = [...document.querySelectorAll('.video-card > video')];
-
-videosEls.forEach(video => {
-    video.addEventListener('click', e => {
-
-        const video = e.target.closest('video');
-        const videoId = video.dataset.video;
-
-        if (videoId === video.getAttribute('data-video')) {
-
-            if (video.paused) {
-                video.play();
-
-            } else {
-                video.pause();
-            }
-        }
-
-    });
-})

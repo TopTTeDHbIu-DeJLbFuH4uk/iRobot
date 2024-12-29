@@ -5,6 +5,10 @@ body {
     font-family: PT Sans, Arial, sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
 ul, li {
     margin: 0;
     padding: 0;
@@ -23,19 +27,6 @@ button {
     border: none;
     outline: none;
 }
-
-/*h1 {*/
-/*    font-size: 40px;*/
-/*    font-weight: 700;*/
-/*    color: var(--color-dark-grey);*/
-/*    margin: 0;*/
-/*}*/
-
-/*h2 {*/
-/*    font-size: 48px;*/
-/*    color: var(--color-dark-slate);*/
-/*    margin: 0 0 18px 0;*/
-/*}*/
 
 /*.background--green {*/
 /*    background-color: var(--color-forest-green);*/

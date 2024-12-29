@@ -1,14 +1,15 @@
-.content-video {
+.video_container {
     position: relative;
 
     display: flex;
     width: 100%;
 
-    border-bottom: 1px solid var(--color-black);
+    border-bottom: 1px solid #000000;
 }
 
-.content-video::before {
+.video_container::before {
     position: absolute;
+
     content: '';
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
@@ -19,14 +20,14 @@
     z-index: 1;
 }
 
-.hero-video {
+.video {
     position: absolute;
     object-fit: cover;
     height: 100%;
     width: 100%;
 }
 
-.control-btn {
+.play_pause_btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -38,33 +39,37 @@
 
     border-radius: 50%;
     background-color: transparent;
-    border: 2px solid var(--color-white);
+    border: 2px solid #ffffff;
     height: 36px;
     width: 36px;
 
     cursor: pointer;
 }
-
-.control-btn > img:first-child {
-    padding-left: 2px;
+.play_pause_btn:hover {
+    transition: all .3s ease-in-out;
+    outline-offset: -2px;
+    outline: 8px solid hsla(0, 0%, 100%, .3);
 }
 
-.control-btn:hover {
-    transition: all .2s ease-in-out;
-    outline-offset: -3px;
-    outline: 9px solid hsla(0, 0%, 100%, .3);
+.play {
+    background: url("../assets/other/play.svg") no-repeat center;
+    width: 18px;
+    height: 18px;
+    margin-left: 3px;
 }
 
-.inactive {
-    display: none;
+.pause {
+    background: url("../assets/other/pause.svg") no-repeat center;
+    width: 22px;
+    height: 22px;
 }
 
-.is-active {
+.play_pause_outline {
     outline-offset: 3px;
     outline: 3px solid hsla(0, 0%, 100%, .3);
 }
 
-.video-overlay {
+.video_content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,16 +81,16 @@
     z-index: 1;
 }
 
-.eyebrow {
+.holiday_container {
     width: clamp(10px, 100%, 107px);
     height: 22px;
-    background-color: var(--color-red);
+    background-color: #D0312D;
     border-radius: 3px;
 
     margin-bottom: 12px;
 }
 
-.eyebrow-text {
+.holiday {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,90 +99,71 @@
 
     font-size: 12px;
     font-weight: 600;
-    color: var(--color-white);
+    color: #ffffff;
 }
 
-.video-overlay > h1 {
+.video_header {
     width: clamp(10px, 100%, 650px);
 
     font-size: 56px;
     font-weight: 600;
-    color: var(--color-white);
+    color: #ffffff;
 
     margin: 0;
 }
 
-.video-overlay > p {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-white);
+.video_description {
+    color: #ffffff;
+    margin: 15px 0 20px 0;
 }
 
-.button-section {
+.video_btn {
     display: flex;
     gap: 25px;
     width: 100%;
 }
 
-.button-shop-robot {
+.shop_btn {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    border-radius: 37px;
+
+    padding: 16px 0 16px 0;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.btn_robot {
     width: clamp(20px, 100%, 275px);
-
-    background-color: var(--color-forest-green);
-    border-radius: 37px;
-
-    padding: 16px 0 16px 0;
-
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-white);
-    text-decoration: none;
-
-    cursor: pointer;
+    background-color: #447355;
 }
-
-.button-shop-robot:hover {
+.btn_robot:hover {
     transition: all .2s ease-in-out;
-    outline: 6px solid var(--color-olive);
+    outline: 6px solid #767b55;
 }
 
-.button-shop-accessory {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btn_accessory {
     width: clamp(20px, 100%, 300px);
-
-    border-radius: 37px;
-    border: 2px solid var(--color-white);
-
-    padding: 16px 0 16px 0;
-
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-white);
-    text-decoration: none;
-
-    cursor: pointer;
+    border: 2px solid #ffffff;
 }
-
-.button-shop-accessory:hover {
+.btn_accessory:hover {
     transition: all .2s ease-in-out;
     outline: 6px solid hsla(0, 0%, 100%, .3);
 }
 
-.offers-valid {
+.offers_valid {
+    color: #ffffff;
     padding-top: 15px;
-
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-white);
 }
 
 @media screen and (max-width: 1440px) {
 
-    .video-overlay {
+    .video_content {
         padding-left: 40px;
     }
 
@@ -185,7 +171,7 @@
 
 @media screen and (max-width: 1024px) {
 
-    .video-overlay {
+    .video_content {
         padding-left: 30px;
     }
 
@@ -193,20 +179,20 @@
 
 @media screen and (max-width: 768px) {
 
-    .video-overlay {
+    .video_content {
         padding-left: 20px;
     }
 
-    .eyebrow {
+    .holiday_container {
         width: clamp(10px, 100%, 80px);
         height: 14px;
     }
 
-    .eyebrow-text {
+    .holiday {
         font-size: 8px;
     }
 
-    .button-shop-accessory {
+    .btn_accessory {
         display: none;
     }
 
@@ -214,22 +200,12 @@
 
 @media screen and (max-width: 425px) {
 
-    .video-overlay {
+    .video_content {
         padding-left: 10px;
     }
 
-    .video-overlay > h1 {
+    .video_header {
         font-size: 46px;
-    }
-
-    .control-btn {
-        height: 26px;
-        width: 26px;
-    }
-
-    .control-btn > img {
-        height: 14px;
-        width: 14px;
     }
 
 }
