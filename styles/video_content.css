@@ -18,9 +18,11 @@
     height: 100%;
 
     z-index: 1;
+
+    pointer-events: none;
 }
 
-.video {
+.main_video {
     position: absolute;
     object-fit: cover;
     height: 100%;
@@ -74,14 +76,14 @@
     flex-direction: column;
     justify-content: center;
     height: 634px;
-    width: 100%;
 
     padding: 10px 0 10px 120px;
 
     z-index: 1;
+    pointer-events: none;
 }
 
-.holiday_container {
+.tag_container {
     width: clamp(10px, 100%, 107px);
     height: 22px;
     background-color: #D0312D;
@@ -90,7 +92,7 @@
     margin-bottom: 12px;
 }
 
-.holiday {
+.tag {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,6 +143,8 @@
 .btn_robot {
     width: clamp(20px, 100%, 275px);
     background-color: #447355;
+
+    pointer-events: auto;
 }
 .btn_robot:hover {
     transition: all .2s ease-in-out;
@@ -150,6 +154,8 @@
 .btn_accessory {
     width: clamp(20px, 100%, 300px);
     border: 2px solid #ffffff;
+
+    pointer-events: auto;
 }
 .btn_accessory:hover {
     transition: all .2s ease-in-out;
@@ -183,12 +189,12 @@
         padding-left: 20px;
     }
 
-    .holiday_container {
+    .tag_container {
         width: clamp(10px, 100%, 80px);
         height: 14px;
     }
 
-    .holiday {
+    .tag {
         font-size: 8px;
     }
 

@@ -5,14 +5,20 @@ body {
     font-family: PT Sans, Arial, sans-serif;
 }
 
-.hidden {
-    display: none;
-}
-
 ul, li {
     margin: 0;
     padding: 0;
     list-style-type: none;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 h1, h2,
@@ -22,10 +28,19 @@ p {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 button {
     background-color: transparent;
     border: none;
     outline: none;
+}
+
+.hidden {
+    display: none;
 }
 
 /*.background--green {*/

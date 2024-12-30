@@ -28,10 +28,10 @@
     width: clamp(100px, 100%, 608px);
 }
 
-.content-block > p {
-    font-size: 16px;
-    margin: 0 0 10px 0;
-}
+/*.content_block > p {*/
+/*    font-size: 16px;*/
+/*    margin: 0 0 10px 0;*/
+/*}*/
 
 .container-btn-discounts {
     display: flex;
@@ -56,7 +56,7 @@
 }
 
 .offer {
-    color: var(--color-dark-slate);
+    color: #343A40;
 }
 
 @media screen and (max-width: 1440px) {
