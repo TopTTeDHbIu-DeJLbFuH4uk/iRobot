@@ -7,18 +7,18 @@ let lastClickIndex;
 playPauseBtnEls.forEach((playPauseEl, index) => {
     playPauseEl.addEventListener('click', e => {
         lastClickIndex = index;
-        handlerVideos(e, lastClickIndex);
+        handlerVideo(e, lastClickIndex);
     });
 });
 
 videoEls.forEach((videoEl, index) => {
    videoEl.addEventListener('click', e => {
        lastClickIndex = index;
-       handlerVideos(e, lastClickIndex, videoEl);
+       handlerVideo(e, lastClickIndex, videoEl);
    });
 });
 
-const handlerVideos = (e, lastClickIndex, videoEl) => {
+const handlerVideo = (e, lastClickIndex, videoEl) => {
     const path = e.composedPath();
 
     const isClickVideo = path.some(el => {
@@ -39,19 +39,15 @@ const handlerVideos = (e, lastClickIndex, videoEl) => {
             playEls[lastClickIndex].classList.remove('hidden');
             pauseEls[lastClickIndex].classList.add('hidden');
 
-            if (path.includes(videoEl)) {
-                playPauseBtnEls[lastClickIndex].classList.remove('play_pause_outline');
-            }
-
         } else {
             videoEls[lastClickIndex].pause();
 
             playEls[lastClickIndex].classList.add('hidden');
             pauseEls[lastClickIndex].classList.remove('hidden');
-
-            if (path.includes(videoEl)) {
-                playPauseBtnEls[lastClickIndex].classList.remove('play_pause_outline');
-            }
         }
+    }
+
+    if (path.includes(videoEl)) {
+        playPauseBtnEls[lastClickIndex].classList.remove('play_pause_outline');
     }
 };

@@ -5,11 +5,79 @@ body {
     font-family: PT Sans, Arial, sans-serif;
 }
 
-ul, li {
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/* Links */
+
+a, a:link, a:visited  {
+    text-decoration: none;
+}
+
+a:hover  {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul, ul li {
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style-type: none;
 }
+
+address {
+    font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+legend {
+    display: block;
+}
+
+/* Other */
 
 h1 {
     font-size: 40px;
@@ -21,46 +89,6 @@ h2 {
     color: #ffffff;
 }
 
-h1, h2,
-h3, h4,
-h5, h6,
-p {
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-
 .hidden {
     display: none;
 }
-
-/*.background--green {*/
-/*    background-color: var(--color-forest-green);*/
-/*    color: var(--color-white);*/
-/*}*/
-
-/*.background--transparent {*/
-/*    background-color: transparent;*/
-/*    border: 2px solid var(--color-forest-green);*/
-/*    color: var(--color-forest-green);*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-/*.background--green:hover {*/
-/*    transition: all .2s ease-in-out;*/
-/*    outline: 6px solid var(--color-pale-green);*/
-/*}*/
-
-/*.background--transparent:hover {*/
-/*    transition: all .2s ease-in-out;*/
-/*    outline: 6px solid var(--color-pale-green);*/
-/*}*/

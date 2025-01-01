@@ -123,6 +123,8 @@
     display: flex;
     gap: 25px;
     width: 100%;
+
+    margin-bottom: 15px;
 }
 
 .shop_btn {
@@ -137,17 +139,19 @@
     color: #ffffff;
     text-decoration: none;
 
+    transition: outline .2s ease-in-out;
+
     cursor: pointer;
 }
 
 .btn_robot {
     width: clamp(20px, 100%, 275px);
     background-color: #447355;
+    outline: #447355;
 
     pointer-events: auto;
 }
 .btn_robot:hover {
-    transition: all .2s ease-in-out;
     outline: 6px solid #767b55;
 }
 
@@ -158,13 +162,14 @@
     pointer-events: auto;
 }
 .btn_accessory:hover {
-    transition: all .2s ease-in-out;
     outline: 6px solid hsla(0, 0%, 100%, .3);
 }
 
-.offers_valid {
+.offer_valid {
     color: #ffffff;
-    padding-top: 15px;
+}
+.color_black {
+    color: #343A40;
 }
 
 @media screen and (max-width: 1440px) {
@@ -187,15 +192,6 @@
 
     .video_content {
         padding-left: 20px;
-    }
-
-    .tag_container {
-        width: clamp(10px, 100%, 80px);
-        height: 14px;
-    }
-
-    .tag {
-        font-size: 8px;
     }
 
     .btn_accessory {

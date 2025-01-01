@@ -61,10 +61,6 @@
 
 @media screen and (max-width: 1024px) {
 
-    .tag_container {
-        padding: 4px 0 4px 0;
-    }
-
     .offer_content {
         padding-left: 30px;
     }
