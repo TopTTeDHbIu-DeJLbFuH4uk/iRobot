@@ -65,7 +65,7 @@
 
     padding: 0 15px;
 
-    transition: transform .5s ease-in-out;
+    transition: transform .5s;
 }
 
 .slider_robot_wrapper {
@@ -144,3 +144,26 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 1024px) {
+
+    .slider_robots_container {
+        width: clamp(462px, 100%, 942px);
+    }
+
+    .slider_robot_wrapper {
+        flex-basis: calc((100% - 20px) / 2);
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .slider_robots_container {
+        width: clamp(100px, 100%, 687px);
+    }
+
+    .slider_robot_wrapper {
+        flex-basis: 100%;
+    }
+
+}

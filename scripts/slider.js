@@ -28,7 +28,7 @@ firstThreeSlides.forEach(slideEl => {
 const allSlides = [...document.querySelectorAll('.slider_robot_wrapper')];
 currentSlideIndex = visibleSlidesCount;
 
-// Динамическое обновление ширины при масштабировании
+// Динамическое обновление ширины слайда при масштабировании
 const updateSlideWidth = () => {
     slideWidth = allSlides[0].offsetWidth;
     updateSliderPosition();
@@ -39,8 +39,8 @@ window.addEventListener('resize', updateSlideWidth);
 const updateSliderPosition = (withTransition = true) => {
     const offset = -currentSlideIndex * slideWidth;
 
-    sliderRobotsTrackEl.style.transition = withTransition ? 'transform .5s ease-in-out' : 'none';
-    sliderRobotsTrackEl.style.transform = `translateX(${offset}px)`;
+    sliderRobotsTrackEl.style.transition = withTransition ? 'transform .5s' : 'none';
+    sliderRobotsTrackEl.style.transform = `translate3d(${offset}px, 0px, 0px)`;
 };
 
 // Показать следующий слайд
@@ -87,9 +87,40 @@ const prevSlide = () => {
     }
 };
 
+const posInit = 0;
+let posX1 = 0;
+let posX2 = 0;
+
+const swipeStart = () => {
+
+};
+
+const swipeAction = () => {
+
+};
+
+const swipeEnd = () => {
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Обработчики на кнопках
 btnNextPositionEl.addEventListener('click', nextSlide);
 btnPrevPositionEl.addEventListener('click', prevSlide);
 
 // Инициализация начального положения слайдера
 updateSliderPosition(false);
+
+
