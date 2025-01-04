@@ -57,6 +57,7 @@
 
 .slider_item_link {
     color: #596273;
+    text-decoration: underline;
 }
 
 .slider_item_active {
