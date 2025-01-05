@@ -1,4 +1,4 @@
-const paginationCirclesContainerEl = document.querySelector('.pagination_circles_container');
+const circlesRobotsEl = document.querySelector('.circles_robots');
 const btnPrevPositionEl = document.querySelector('.btn_prev_position');
 const btnNextPositionEl = document.querySelector('.btn_next_position');
 const sliderRobotsTrackEl = document.querySelector('.slider_robots_track');
@@ -10,20 +10,20 @@ let currentSlideIndex = visibleSlidesCount;
 let isAnimating = false;
 
 // Создание кружков пагинации в количестве слайдов
-const paginationCircles = [];
+const paginationCirclesRobots = [];
 
-const createPaginationCircles = () => {
+const createPaginationCirclesRobots = () => {
     const li = document.createElement('li');
     li.className = 'pagination_circle';
-    paginationCirclesContainerEl.appendChild(li);
-    paginationCircles.push(li);
+    circlesRobotsEl.appendChild(li);
+    paginationCirclesRobots.push(li);
 };
 
-const addPagination = () => {
-    sliderRobotWrapperEls.forEach(createPaginationCircles);
-    paginationCircles[0].classList.add('circle_active');
+const addPaginationRobots = () => {
+    sliderRobotWrapperEls.forEach(createPaginationCirclesRobots);
+    paginationCirclesRobots[0].classList.add('circle_active');
 };
-addPagination();
+addPaginationRobots();
 
 // Базовая ширина слайда
 let slideWidth = sliderRobotWrapperEls[0].offsetWidth;
@@ -68,7 +68,7 @@ const updateSliderPosition = (withTransition = true, index) => {
 };
 
 // Навигация по кружкам пагинации
-paginationCircles.forEach((circleEl, index) => {
+paginationCirclesRobots.forEach((circleEl, index) => {
     circleEl.addEventListener('click', () => {
         updateSliderPosition(true, index + visibleSlidesCount);
     });
@@ -79,12 +79,12 @@ const addActiveClass = (currentSlideIndexCircle) => {
     let normalizedIndex;
 
     if (currentSlideIndexCircle) {
-        normalizedIndex = (currentSlideIndexCircle - visibleSlidesCount + paginationCircles.length) % paginationCircles.length;
+        normalizedIndex = (currentSlideIndexCircle - visibleSlidesCount + paginationCirclesRobots.length) % paginationCirclesRobots.length;
     } else {
-        normalizedIndex = (currentSlideIndex - visibleSlidesCount + paginationCircles.length) % paginationCircles.length;
+        normalizedIndex = (currentSlideIndex - visibleSlidesCount + paginationCirclesRobots.length) % paginationCirclesRobots.length;
     }
 
-    paginationCircles[normalizedIndex].classList.add('circle_active');
+    paginationCirclesRobots[normalizedIndex].classList.add('circle_active');
 };
 
 // Удалять выделенный кружок пагинации предыдущему слайду
@@ -92,11 +92,11 @@ const removeActiveClass = (currentSlideIndexCircle) => {
     let normalizedIndex;
 
     if (currentSlideIndexCircle) {
-        normalizedIndex = (currentSlideIndexCircle - visibleSlidesCount + paginationCircles.length) % paginationCircles.length;
+        normalizedIndex = (currentSlideIndexCircle - visibleSlidesCount + paginationCirclesRobots.length) % paginationCirclesRobots.length;
     } else {
-        normalizedIndex = (currentSlideIndex - visibleSlidesCount + paginationCircles.length) % paginationCircles.length;
+        normalizedIndex = (currentSlideIndex - visibleSlidesCount + paginationCirclesRobots.length) % paginationCirclesRobots.length;
     }
-    paginationCircles[normalizedIndex].classList.remove('circle_active');
+    paginationCirclesRobots[normalizedIndex].classList.remove('circle_active');
 };
 
 // Показать следующий слайд
