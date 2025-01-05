@@ -16,6 +16,8 @@
 
     width: clamp(414px, 100%, 1282px);
 
+    margin-bottom: 45px;
+
     overflow: hidden;
 }
 
@@ -125,23 +127,28 @@
 }
 
 
-.indicator_container {
+.pagination_circles_container {
     display: flex;
     justify-content: center;
     width: 100%;
     gap: 24px;
-
-    padding-top: 45px;
-    margin-bottom: 92px;
 }
 
-.indicator {
+.pagination_circle {
     background-color: #b8edb7;
     border-radius: 100%;
     width: 10px;
     height: 10px;
 
     cursor: pointer;
+}
+
+.circle_active {
+    background-color: #b8edb7;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    box-shadow: 0 0 0 7px #447355;
 }
 
 @media screen and (max-width: 1024px) {
