@@ -28,15 +28,34 @@ arrowEls.forEach(arrow => {
 });
 
 // DROPDOWN MENU
-const dropdownMenuEl = document.querySelector('.language_selection_option');
+const languageSelection = document.querySelector('.language_selection');
+const languageSelectionOptionEl = document.querySelector('.language_selection_option');
 
-document.addEventListener('click', e => {
-    const dropdownMenu = e.target.closest('.language_selection_option');
+let handlerDropDownMenuWrapper;
 
-    if (e.target.classList.contains('selected_language') || e.target.classList.contains('current_language')) {
-        dropdownMenuEl.classList.toggle('list_active');
+languageSelection.addEventListener('click', () => {
+    languageSelectionOptionEl.classList.toggle('hidden');
 
-    } else if (!dropdownMenu && dropdownMenuEl.classList.contains('list_active')) {
-        dropdownMenuEl.classList.remove('list_active');
-    }
+    handlerDropDownMenuWrapper = e => handlerDropDownMenu(e);
+
+    window.addEventListener('click', handlerDropDownMenuWrapper);
 });
+
+languageSelectionOptionEl.addEventListener('click', e => {
+    e.stopPropagation();
+});
+
+const handlerDropDownMenu = e => {
+    const path = e.composedPath();
+
+    const isClickAway = path.every(el => {
+        if (!el.classList) return true;
+        return !el.classList.contains('language_selection_option') && !el.classList.contains('language_selection');
+    });
+
+    if (isClickAway) {
+        languageSelectionOptionEl.classList.add('hidden');
+
+        window.removeEventListener('click', handlerDropDownMenuWrapper);
+    }
+};

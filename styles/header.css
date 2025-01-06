@@ -137,7 +137,7 @@
 .language_selection_option {
     position: absolute;
 
-    display: none;
+    display: block;
     width: clamp(220px, 100%, 220px);
     box-sizing: border-box;
 
@@ -149,10 +149,6 @@
     z-index: 10;
 
     cursor: auto;
-}
-
-.list_active {
-    display: block;
 }
 
 .language {
@@ -174,8 +170,6 @@
 
     align-self: center;
 }
-
-/*--------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 1600px) {
 

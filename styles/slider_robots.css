@@ -61,7 +61,6 @@
     margin-right: 3px;
 }
 
-
 .slider_robots_track {
     display: flex;
 
@@ -77,9 +76,9 @@
     flex-shrink: 0;
     flex-basis: calc((100% - 2 * 20px) / 3);
 
+    /*width: clamp(414px, 100%, 1282px);*/
     gap: 25px;
     padding-right: 20px;
-
     pointer-events: none;
 }
 

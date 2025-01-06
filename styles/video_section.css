@@ -14,7 +14,7 @@
 .videos_container {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: clamp(686px, 100%, 2060px);
 
     overflow: hidden;
 }

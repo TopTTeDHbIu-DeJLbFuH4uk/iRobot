@@ -1,6 +1,7 @@
 const popupEls = [...document.querySelectorAll('.popup')];
 const navItemEls = [...document.querySelectorAll('.nav_item')];
 let lastSelectedPopupIndex;
+let handlerPopupWrapper;
 
 navItemEls.forEach((navItemEl, index) => {
     navItemEl.addEventListener('click', () => {
@@ -20,7 +21,8 @@ navItemEls.forEach((navItemEl, index) => {
         popupEls[lastSelectedPopupIndex].classList.add('popup_active');
         navItemEls[lastSelectedPopupIndex].classList.add('select_nav_item');
 
-        window.addEventListener('click', e => handlerPopup(e));
+        handlerPopupWrapper = e => handlerPopup(e);
+        window.addEventListener('click', handlerPopupWrapper);
     });
 });
 
@@ -36,9 +38,9 @@ const handlerPopup = e => {
     if (isClickAway) {
         popupEls[lastSelectedPopupIndex].classList.remove('popup_active');
         navItemEls[lastSelectedPopupIndex].classList.remove('select_nav_item');
-    }
 
-    window.removeEventListener('click', handlerPopup);
+        window.removeEventListener('click', handlerPopupWrapper);
+    }
 };
 
 popupEls.forEach(popupEl => {
