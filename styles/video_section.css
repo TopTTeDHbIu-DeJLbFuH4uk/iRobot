@@ -14,14 +14,13 @@
 .videos_container {
     display: flex;
     justify-content: center;
-    width: clamp(686px, 100%, 2060px);
+    width: clamp(100px, 100%, 2060px);
 
     overflow: hidden;
 }
 
 .slider_video_track {
     display: flex;
-    gap: 20px;
 }
 
 .video_card {
@@ -33,6 +32,8 @@
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: calc((100% - 2 * 20px) / 3);
+
+    padding-right: 20px;
 }
 
 .video_card > video {
@@ -85,7 +86,7 @@
     padding-top: 2px;
 }
 
-.pagination_circles_videos {
+.video_pagination_circles {
     display: none;
     justify-content: center;
     width: 100%;
@@ -105,7 +106,7 @@
         flex-basis: calc((100% - 20px) / 2);
     }
 
-    .pagination_circles_videos {
+    .video_pagination_circles {
         display: flex;
     }
 
@@ -122,6 +123,7 @@
 @media screen and (max-width: 375px) {
 
     .video_caption {
+        width: clamp(100px, 100%, 250px);
         font-size: 32px;
     }
 

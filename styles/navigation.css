@@ -54,7 +54,7 @@
 }
 
 .search {
-    padding: 9px 15px 9px 20px;
+    padding: 9px 35px 9px 20px;
     margin-right: 10px;
     width: clamp(60px, 100%, 219px);
     height: 18px;
@@ -388,12 +388,12 @@
         align-items: center;
         width: 100%;
 
-        padding-top: 12px;
-        margin-bottom: 12px;
+        padding: 12px 20px 12px 20px;
+        box-sizing: border-box;
     }
 
     .mobile_search {
-        padding: 9px 15px 9px 20px;
+        padding: 9px 35px 9px 20px;
         width: clamp(60px, 100%, 340px);
         height: 14px;
 
