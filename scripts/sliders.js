@@ -21,7 +21,7 @@ const updateSliderPosition = (withTransition = true, currentSlideIndex, sliderTr
     const offset = -currentSlideIndex.value * slideWidth;
 
     sliderTrack.style.transition = withTransition ? 'transform .5s' : 'none';
-    sliderTrack.style.transform = `translate3d(${offset}px, 0px, 0px)`;
+    sliderTrack.style.transform = `translateX(${offset}px)`;
 };
 
 const sozdatPostranichnieKrugi = ({
@@ -45,7 +45,7 @@ const sozdatPostranichnieKrugi = ({
     const firstSlides = slides.slice(0, currentSlideIndex.value);
     firstSlides.forEach(slideEl => {
         const clone = slideEl.cloneNode(true);
-        sliderTrack.appendChild(clone);
+        sliderTrack.append(clone);
     });
 
     // Базовая ширина слайда
@@ -64,7 +64,7 @@ const sozdatPostranichnieKrugi = ({
         const li = document.createElement('li');
         li.className = 'pagination_circle';
         paginationCircles.push(li);
-        paginationCirclesContainer.appendChild(li);
+        paginationCirclesContainer.append(li);
     });
     paginationCircles[0].classList.add('circle_active');
 
@@ -110,12 +110,24 @@ const sozdatPostranichnieKrugi = ({
     // ===================================================
     let startX = 0;
     let currentX = 0;
+    let startY = 0;
+    let currentY = 0;
     let isDragging = false;
+    let hasCrossedThreshold = false;
+    let offsetAtThreshold = 0;
+    const swipeThreshold = 50;
 
     const startDrag = e => {
+        if (isAnimating) return;
+        isAnimating = true;
+
         startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-        currentX = startX;
+        // currentX = startX;
+        // startY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+        // currentY = startY;
+
         isDragging = true;
+        hasCrossedThreshold = false;
         sliderTrack.style.transition = 'none';
     };
 
@@ -123,9 +135,24 @@ const sozdatPostranichnieKrugi = ({
         if (!isDragging) return;
 
         currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-        const diff = currentX - startX;
-        const offset = -currentSlideIndex.value * slideWidth;
-        sliderTrack.style.transform = `translate3d(${offset + diff}px, 0, 0)`;
+        // currentY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+        const diffX = currentX - startX;
+        // const diffY = currentY - startY;
+
+
+
+        if (!hasCrossedThreshold && Math.abs(diffX) > swipeThreshold) {
+            hasCrossedThreshold = true;
+            offsetAtThreshold = diffX;
+        }
+
+        if (hasCrossedThreshold) {
+            // document.body.style.overflowY = 'hidden';
+            e.preventDefault();
+
+            const offset = -currentSlideIndex.value * slideWidth + (diffX - offsetAtThreshold);
+            sliderTrack.style.transform = `translateX(${offset}px)`;
+        }
     };
 
     const endDrag = () => {
@@ -133,9 +160,10 @@ const sozdatPostranichnieKrugi = ({
 
         const diff = currentX - startX;
         isDragging = false;
+
+        // document.body.style.overflowY = 'scroll';
         sliderTrack.style.transition = 'transform 0.5s';
 
-        const swipeThreshold = 120;
         if (Math.abs(diff) > swipeThreshold) {
             if (diff < 0) {
                 nextSlide(currentSlideIndex, sliderTrack, slideWidth, slides, paginationCirclesContainer, visibleSlidesCount);
@@ -145,45 +173,27 @@ const sozdatPostranichnieKrugi = ({
         } else {
             updateSliderPosition(true, currentSlideIndex, sliderTrack, slideWidth);
         }
+
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500);
     };
 
-    const addDragEvents = element => {
-        element.addEventListener('touchstart', startDrag, {passive: true});
-        element.addEventListener('mousedown', startDrag, {passive: true});
+    const addDragEvents = sliderTrack => {
+        sliderTrack.addEventListener('touchstart', startDrag, { passive: false });
+        sliderTrack.addEventListener('mousedown', startDrag, { passive: false });
 
-        element.addEventListener('touchmove', moveDrag, {passive: true});
-        element.addEventListener('mousemove', moveDrag, {passive: true});
+        sliderTrack.addEventListener('touchmove', moveDrag, { passive: false });
+        sliderTrack.addEventListener('mousemove', moveDrag, { passive: false });
 
-        element.addEventListener('touchend', endDrag, {passive: true});
-        element.addEventListener('mouseup', endDrag, {passive: true});
+        sliderTrack.addEventListener('touchend', endDrag, { passive: true });
+        sliderTrack.addEventListener('mouseup', endDrag, { passive: true });
 
-        element.addEventListener('mouseleave', endDrag, {passive: true});
+        sliderTrack.addEventListener('mouseleave', endDrag, { passive: true });
     };
     addDragEvents(sliderTrack);
-};
 
-sozdatPostranichnieKrugi({
-    slides: videoCardsEls,
-    paginationCirclesContainer: paginationCirclesEls[0],
-    sliderTrack: sliderTrackEls[0],
-    visibleSlidesCount: 2,
-});
-sozdatPostranichnieKrugi({
-    slides: sliderRobotWrapperEls,
-    paginationCirclesContainer: paginationCirclesEls[1],
-    sliderTrack: sliderTrackEls[1],
-    buttonNext: buttonNextEls[0],
-    buttonPrev: buttonPrevEls[0],
-    visibleSlidesCount: 3,
-});
-sozdatPostranichnieKrugi({
-    slides: sliderShoppingWrapperEls,
-    paginationCirclesContainer: paginationCirclesEls[2],
-    sliderTrack: sliderTrackEls[2],
-    buttonNext: buttonNextEls[1],
-    buttonPrev: buttonPrevEls[1],
-    visibleSlidesCount: 4,
-});
+};
 
 // Выделять текущий кружок пагинации, который соответствует слайду
 const addActiveClass = (paginationCirclesContainer, index, visibleSlidesCount) => {
@@ -233,3 +243,26 @@ const prevSlide = (currentSlideIndex, sliderTrack, slideWidth, slides, paginatio
         }, 500);
     }
 };
+
+sozdatPostranichnieKrugi({
+    slides: videoCardsEls,
+    paginationCirclesContainer: paginationCirclesEls[0],
+    sliderTrack: sliderTrackEls[0],
+    visibleSlidesCount: 2,
+});
+sozdatPostranichnieKrugi({
+    slides: sliderRobotWrapperEls,
+    paginationCirclesContainer: paginationCirclesEls[1],
+    sliderTrack: sliderTrackEls[1],
+    buttonNext: buttonNextEls[0],
+    buttonPrev: buttonPrevEls[0],
+    visibleSlidesCount: 3,
+});
+sozdatPostranichnieKrugi({
+    slides: sliderShoppingWrapperEls,
+    paginationCirclesContainer: paginationCirclesEls[2],
+    sliderTrack: sliderTrackEls[2],
+    buttonNext: buttonNextEls[1],
+    buttonPrev: buttonPrevEls[1],
+    visibleSlidesCount: 4,
+});
