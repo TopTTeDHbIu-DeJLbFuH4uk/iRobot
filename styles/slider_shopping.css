@@ -9,7 +9,6 @@
 .slider_shopping_container {
     position: relative;
 
-
     width: clamp(100px, 100%, 1644px);
 
     overflow: hidden;
@@ -19,6 +18,7 @@
     top: calc(100% / 2);
     left: 0;
 }
+
 .btn_shopping_next {
     top: calc(100% / 2);
     right: 0
@@ -56,4 +56,20 @@
     gap: 24px;
 
     padding-top: 45px;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .slider_shopping_wrapper {
+        flex-basis: calc((100% - 2 * 20px) / 3);
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .slider_shopping_wrapper {
+        flex-basis: calc(100% / 2);
+    }
+
 }
