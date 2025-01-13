@@ -70,6 +70,7 @@
     padding: 0 15px;
 
     transition: transform .5s;
+    touch-action: pan-y;
 }
 
 .slider_robot_wrapper {
@@ -81,15 +82,19 @@
 
     gap: 25px;
     padding-right: 20px;
-    /*pointer-events: none;*/
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    user-select: none;
 }
 
 .slide_robot {
     width: 100%;
     height: auto;
     border-radius: 12px;
-
-    pointer-events: auto;
 }
 
 .slide_robot_content {

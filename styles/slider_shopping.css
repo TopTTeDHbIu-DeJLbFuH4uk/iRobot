@@ -30,6 +30,8 @@
     transition: transform .5s;
 
     padding: 0 20px;
+
+    touch-action: pan-y;
 }
 
 .slider_shopping_wrapper {
@@ -39,7 +41,7 @@
     flex-shrink: 0;
     flex-basis: calc((100% - 3 * 20px) / 4);
 
-    padding-right: 20px;
+    margin-right: 20px;
 }
 
 .slide_shopping {

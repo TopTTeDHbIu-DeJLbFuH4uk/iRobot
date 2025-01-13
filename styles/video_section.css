@@ -21,6 +21,7 @@
 
 .slider_video_track {
     display: flex;
+    touch-action: pan-y;
 }
 
 .video_card {

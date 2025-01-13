@@ -59,6 +59,9 @@ const configureSlider = ({
 
     const updateSlideWidth = () => {
         slideWidth = slidesEls[0].offsetWidth;
+        console.log(slideWidth); // 617 424 406
+        // Делаю экран меньше на 1px
+        // 616 424 (386) Почему 386?
         updateSliderPosition({withTransition: false, currentSlideIndex, sliderTrackEl, slideWidth});
     };
     window.addEventListener('resize', updateSlideWidth);
@@ -132,6 +135,7 @@ const configureSlider = ({
     let startX = 0;
     let currentX = 0;
     let isDragging = false;
+    let hasMoved = false;
 
     const swipeThreshold = 50;
     const minScreenWidthForSwipe = 1024;
@@ -140,12 +144,14 @@ const configureSlider = ({
         if (isAnimating) return;
         isAnimating = true;
 
+        e.preventDefault();
+
         const isVideoSlider = sliderTrackEl === sliderTrackEls[0];
         if (isVideoSlider && window.innerWidth >= minScreenWidthForSwipe) return;
 
         isDragging = true;
 
-        startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+        startX = e.touches ? e.touches[0].clientX : e.clientX;
         currentX = startX;
 
         sliderTrackEl.style.transition = 'none';
@@ -154,19 +160,22 @@ const configureSlider = ({
     const moveDrag = e => {
         if (!isDragging) return;
 
-        currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+        e.preventDefault();
+        hasMoved = true;
+
+        currentX = e.touches ? e.touches[0].clientX : e.clientX;
         const diff = currentX - startX;
 
         const offset = currentSlideIndex.value * slideWidth;
 
-        // if (e.type.includes('touch')) e.preventDefault();
-
         sliderTrackEl.style.transform = `translateX(${-offset + diff}px)`;
     };
 
-    const endDrag = () => {
+    const endDrag = e => {
         if (!isDragging) return;
         isDragging = false;
+
+        e.preventDefault();
 
         const diff = currentX - startX;
 
@@ -205,16 +214,24 @@ const configureSlider = ({
         }, 500);
     };
 
+    const preventClick = e => {
+        if (hasMoved) {
+            e.preventDefault();
+            hasMoved = false;
+        }
+    };
+
     const addDragEvents = sliderTrackEl => {
-        sliderTrackEl.addEventListener('touchstart', startDrag, {passive: true});
-        sliderTrackEl.addEventListener('touchmove', moveDrag, {passive: true});
-        sliderTrackEl.addEventListener('touchend', endDrag);
+        sliderTrackEl.addEventListener('pointerdown', startDrag);
+        sliderTrackEl.addEventListener('pointermove', moveDrag);
 
-        sliderTrackEl.addEventListener('mousedown', startDrag);
-        sliderTrackEl.addEventListener('mousemove', moveDrag);
-        sliderTrackEl.addEventListener('mouseup', endDrag);
+        sliderTrackEl.addEventListener('pointerup', endDrag);
+        sliderTrackEl.addEventListener('pointercancel', endDrag);
+        sliderTrackEl.addEventListener('pointerleave', endDrag);
 
-        sliderTrackEl.addEventListener('mouseleave', endDrag);
+        sliderTrackEl.querySelectorAll('a').forEach(link => {
+           link.addEventListener('click', preventClick);
+        });
     };
     addDragEvents(sliderTrackEl);
 };
