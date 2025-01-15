@@ -59,9 +59,6 @@ const configureSlider = ({
 
     const updateSlideWidth = () => {
         slideWidth = slidesEls[0].offsetWidth;
-        console.log(slideWidth); // 617 424 406
-        // Делаю экран меньше на 1px
-        // 616 424 (386) Почему 386?
         updateSliderPosition({withTransition: false, currentSlideIndex, sliderTrackEl, slideWidth});
     };
     window.addEventListener('resize', updateSlideWidth);
@@ -76,6 +73,13 @@ const configureSlider = ({
     paginationCircles[0].classList.add('circle_active');
 
     slidesEls = [...sliderTrackEl.querySelectorAll('.slide')];
+
+    const newListVideo = slidesEls.some(slideEl => {
+        return slideEl.classList.contains('video_card');
+    });
+    if (newListVideo) {
+        updateVideoEls();
+    }
 
     paginationCircles.forEach((circleEl, index) => {
         circleEl.addEventListener('click', () => {
@@ -144,10 +148,10 @@ const configureSlider = ({
         if (isAnimating) return;
         isAnimating = true;
 
-        e.preventDefault();
-
         const isVideoSlider = sliderTrackEl === sliderTrackEls[0];
         if (isVideoSlider && window.innerWidth >= minScreenWidthForSwipe) return;
+
+        e.preventDefault();
 
         isDragging = true;
 
@@ -161,6 +165,7 @@ const configureSlider = ({
         if (!isDragging) return;
 
         e.preventDefault();
+
         hasMoved = true;
 
         currentX = e.touches ? e.touches[0].clientX : e.clientX;
@@ -171,11 +176,9 @@ const configureSlider = ({
         sliderTrackEl.style.transform = `translateX(${-offset + diff}px)`;
     };
 
-    const endDrag = e => {
+    const endDrag = () => {
         if (!isDragging) return;
         isDragging = false;
-
-        e.preventDefault();
 
         const diff = currentX - startX;
 
@@ -230,7 +233,7 @@ const configureSlider = ({
         sliderTrackEl.addEventListener('pointerleave', endDrag);
 
         sliderTrackEl.querySelectorAll('a').forEach(link => {
-           link.addEventListener('click', preventClick);
+            link.addEventListener('click', preventClick);
         });
     };
     addDragEvents(sliderTrackEl);

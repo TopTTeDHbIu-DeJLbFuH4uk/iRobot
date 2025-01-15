@@ -41,12 +41,12 @@
 }
 
 .btn_robot_prev {
+    top: calc(100% / 2);
     left: 0;
-    top: 380px;
 }
 .btn_robot_next {
+    top: calc(100% / 2);
     right: 0;
-    top: 380px;
 }
 
 .slider_btn {
@@ -76,6 +76,7 @@
 .slider_robot_wrapper {
     display: flex;
     flex-direction: column;
+    height: 100%;
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: calc((100% - 2 * 20px) / 3);
@@ -83,6 +84,15 @@
     gap: 25px;
     padding-right: 20px;
 
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    user-select: none;
+}
+
+.slider_robot_wrapper > a {
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;

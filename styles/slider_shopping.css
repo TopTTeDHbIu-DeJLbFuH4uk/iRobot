@@ -2,15 +2,12 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     padding: 0 40px 50px 40px;
 }
 
 .slider_shopping_container {
     position: relative;
-
     width: clamp(100px, 100%, 1644px);
-
     overflow: hidden;
 }
 
@@ -35,19 +32,24 @@
 }
 
 .slider_shopping_wrapper {
-    display: flex;
-
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: calc((100% - 3 * 20px) / 4);
 
-    margin-right: 20px;
+    padding-right: 20px;
 }
 
 .slide_shopping {
+    display: block;
+
     width: 100%;
     height: auto;
 
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
     user-select: none;
 }
 
