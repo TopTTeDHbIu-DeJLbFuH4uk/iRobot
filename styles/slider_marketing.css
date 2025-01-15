@@ -1,0 +1,43 @@
+.slider_marketing {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    box-sizing: border-box;
+    padding: 0 20px 0 20px;
+    margin-bottom: 100px;
+}
+
+.slider_marketing_container {
+    position: relative;
+
+    width: clamp(100px, 100%, 1100px);
+    overflow: hidden;
+}
+
+.slider_marketing_track {
+    display: flex;
+
+    transition: transform .5s;
+    touch-action: pan-y;
+}
+
+.slider_marketing_wrapper {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: clamp(100px, 100%, 1100px);
+
+    margin-bottom: 20px;
+}
+
+.slide_marketing {
+    width: 100%;
+    height: auto;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    user-select: none;
+}

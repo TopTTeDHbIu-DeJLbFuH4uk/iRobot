@@ -1,13 +1,48 @@
-const videoCardsEls = [...document.querySelectorAll('.video_card')];
-const sliderRobotWrapperEls = [...document.querySelectorAll('.slider_robot_wrapper')];
-const sliderShoppingWrapperEls = [...document.querySelectorAll('.slider_shopping_wrapper')];
+const renderSlides = () => {
+    const sliderRobotWrapperEl = document.querySelector('.slider_robots_track > template');
+    const sliderShoppingWrapperEl = document.querySelector('.slider_shopping_track > template');
+    const sliderMarketingWrapperEl = document.querySelector('.slider_marketing_track > template');
 
-const buttonPrevEls = [...document.querySelectorAll('.button_prev')];
-const buttonNextEls = [...document.querySelectorAll('.button_next')];
+    robotSlidesData.forEach(slideEl => {
+        const slideElement = sliderRobotWrapperEl.content.cloneNode(true);
 
-const sliderTrackEls = [...document.querySelectorAll('.slider_track')];
+        slideElement.querySelector('img').src = slideEl.imgSrc;
+        slideElement.querySelector('img').alt = slideEl.alt;
+        slideElement.querySelector('img').title = slideEl.title;
+        slideElement.querySelector('h3').textContent = slideEl.quote;
+        slideElement.querySelector('.slide_description').textContent = slideEl.description;
+        slideElement.querySelector('.slide_action').textContent = slideEl.actionText;
+        slideElement.querySelector('.slide_action').href = slideEl.actionLink;
 
-const paginationCirclesEls = [...document.querySelectorAll('.pagination_circles')];
+        sliderRobotWrapperEl.parentElement.append(slideElement);
+    });
+
+    shoppingSlidesData.forEach(slideEl => {
+        const slideElement = sliderShoppingWrapperEl.content.cloneNode(true);
+
+        slideElement.querySelector('img').src = slideEl.imgSrc;
+        slideElement.querySelector('img').alt = slideEl.alt;
+
+        if (slideEl.link) {
+            const linkElement = document.createElement('a');
+
+            linkElement.href = slideEl.link;
+            linkElement.append(slideElement.querySelector('img'));
+
+            slideElement.querySelector('.slider_shopping_wrapper').append(linkElement);
+        }
+        sliderShoppingWrapperEl.parentElement.append(slideElement);
+    });
+
+    marketingSlidesData.forEach(slideEl => {
+        const slideElement = sliderMarketingWrapperEl.content.cloneNode(true);
+        slideElement.querySelector('img').src = slideEl.imgSrc;
+        slideElement.querySelector('img').alt = slideEl.alt;
+        sliderMarketingWrapperEl.parentElement.append(slideElement);
+    });
+
+    getRenderSlides();
+};
 
 const updateSliderPosition = ({
                                   withTransition = true,
@@ -15,14 +50,14 @@ const updateSliderPosition = ({
                                   sliderTrackEl,
                                   slideWidth,
                                   index,
-                                  paginationCirclesContainerEl,
+                                  sliderPaginationEl,
                                   visibleSlidesCount
                               }) => {
 
     if (index) {
-        removeActiveClass({paginationCirclesContainerEl});
+        removeActiveClass({sliderPaginationEl});
         currentSlideIndex.value = index;
-        addActiveClass({paginationCirclesContainerEl, index, visibleSlidesCount});
+        addActiveClass({sliderPaginationEl, index, visibleSlidesCount});
     }
 
     const offset = currentSlideIndex.value * slideWidth;
@@ -33,11 +68,12 @@ const updateSliderPosition = ({
 
 const configureSlider = ({
                              slidesEls,
-                             paginationCirclesContainerEl,
+                             sliderPaginationEl,
                              sliderTrackEl,
-                             buttonNextEl,
-                             buttonPrevEl,
-                             visibleSlidesCount
+                             sliderNavNextEl,
+                             sliderNavPrevEl,
+                             visibleSlidesCount,
+                             sliderTrackEls
                          }) => {
     const currentSlideIndex = {value: visibleSlidesCount};
 
@@ -67,7 +103,7 @@ const configureSlider = ({
     const paginationCircles = slidesEls.map(() => {
         const li = document.createElement('li');
         li.classList.add('pagination_circle');
-        paginationCirclesContainerEl.append(li);
+        sliderPaginationEl.append(li);
         return li;
     });
     paginationCircles[0].classList.add('circle_active');
@@ -90,14 +126,14 @@ const configureSlider = ({
                 sliderTrackEl,
                 slideWidth,
                 index: realIndex,
-                paginationCirclesContainerEl,
+                sliderPaginationEl,
                 visibleSlidesCount
             });
         });
     });
 
-    if (buttonNextEl && buttonPrevEl) {
-        buttonNextEl.addEventListener('click', () => {
+    if (sliderNavNextEl && sliderNavPrevEl) {
+        sliderNavNextEl.addEventListener('click', () => {
             if (isAnimating) return;
             isAnimating = true;
 
@@ -106,7 +142,7 @@ const configureSlider = ({
                 sliderTrackEl,
                 slideWidth,
                 slidesEls,
-                paginationCirclesContainerEl,
+                sliderPaginationEl,
                 visibleSlidesCount
             });
 
@@ -115,7 +151,7 @@ const configureSlider = ({
             }, 500);
         });
 
-        buttonPrevEl.addEventListener('click', () => {
+        sliderNavPrevEl.addEventListener('click', () => {
             if (isAnimating) return;
             isAnimating = true;
 
@@ -124,7 +160,7 @@ const configureSlider = ({
                 sliderTrackEl,
                 slideWidth,
                 slidesEls,
-                paginationCirclesContainerEl,
+                sliderPaginationEl,
                 visibleSlidesCount
             });
 
@@ -151,8 +187,6 @@ const configureSlider = ({
         const isVideoSlider = sliderTrackEl === sliderTrackEls[0];
         if (isVideoSlider && window.innerWidth >= minScreenWidthForSwipe) return;
 
-        e.preventDefault();
-
         isDragging = true;
 
         startX = e.touches ? e.touches[0].clientX : e.clientX;
@@ -164,12 +198,12 @@ const configureSlider = ({
     const moveDrag = e => {
         if (!isDragging) return;
 
-        e.preventDefault();
-
-        hasMoved = true;
-
         currentX = e.touches ? e.touches[0].clientX : e.clientX;
         const diff = currentX - startX;
+
+        if (Math.abs(diff) > 5) {
+            hasMoved = true;
+        }
 
         const offset = currentSlideIndex.value * slideWidth;
 
@@ -191,7 +225,7 @@ const configureSlider = ({
                     sliderTrackEl,
                     slideWidth,
                     slidesEls,
-                    paginationCirclesContainerEl,
+                    sliderPaginationEl,
                     visibleSlidesCount
                 });
             } else {
@@ -200,7 +234,7 @@ const configureSlider = ({
                     sliderTrackEl,
                     slideWidth,
                     slidesEls,
-                    paginationCirclesContainerEl,
+                    sliderPaginationEl,
                     visibleSlidesCount
                 });
             }
@@ -214,6 +248,7 @@ const configureSlider = ({
         }
         setTimeout(() => {
             isAnimating = false;
+            hasMoved = false;
         }, 500);
     };
 
@@ -239,15 +274,15 @@ const configureSlider = ({
     addDragEvents(sliderTrackEl);
 };
 
-const addActiveClass = ({paginationCirclesContainerEl, index, visibleSlidesCount}) => {
-    const circlesEls = paginationCirclesContainerEl.querySelectorAll('.pagination_circle');
+const addActiveClass = ({sliderPaginationEl, index, visibleSlidesCount}) => {
+    const circlesEls = sliderPaginationEl.querySelectorAll('.pagination_circle');
     const normalizedIndex = (index - visibleSlidesCount + circlesEls.length) % circlesEls.length;
 
     circlesEls[normalizedIndex].classList.add('circle_active');
 };
 
-const removeActiveClass = ({paginationCirclesContainerEl}) => {
-    const circlesEls = paginationCirclesContainerEl.querySelectorAll('.pagination_circle');
+const removeActiveClass = ({sliderPaginationEl}) => {
+    const circlesEls = sliderPaginationEl.querySelectorAll('.pagination_circle');
     circlesEls.forEach(circleEl => circleEl.classList.remove('circle_active'));
 };
 
@@ -256,13 +291,13 @@ const nextSlide = ({
                        sliderTrackEl,
                        slideWidth,
                        slidesEls,
-                       paginationCirclesContainerEl,
+                       sliderPaginationEl,
                        visibleSlidesCount
                    }) => {
 
-    removeActiveClass({paginationCirclesContainerEl});
+    removeActiveClass({sliderPaginationEl});
     currentSlideIndex.value++;
-    addActiveClass({paginationCirclesContainerEl, index: currentSlideIndex.value, visibleSlidesCount});
+    addActiveClass({sliderPaginationEl, index: currentSlideIndex.value, visibleSlidesCount});
 
     updateSliderPosition({withTransition: true, currentSlideIndex, sliderTrackEl, slideWidth});
 
@@ -279,13 +314,13 @@ const prevSlide = ({
                        sliderTrackEl,
                        slideWidth,
                        slidesEls,
-                       paginationCirclesContainerEl,
+                       sliderPaginationEl,
                        visibleSlidesCount
                    }) => {
 
-    removeActiveClass({paginationCirclesContainerEl});
+    removeActiveClass({sliderPaginationEl});
     currentSlideIndex.value--;
-    addActiveClass({paginationCirclesContainerEl, index: currentSlideIndex.value, visibleSlidesCount});
+    addActiveClass({sliderPaginationEl, index: currentSlideIndex.value, visibleSlidesCount});
 
     updateSliderPosition({withTransition: true, currentSlideIndex, sliderTrackEl, slideWidth});
 
@@ -297,25 +332,51 @@ const prevSlide = ({
     }
 };
 
-configureSlider({
-    slidesEls: videoCardsEls,
-    paginationCirclesContainerEl: paginationCirclesEls[0],
-    sliderTrackEl: sliderTrackEls[0],
-    visibleSlidesCount: 2,
-});
-configureSlider({
-    slidesEls: sliderRobotWrapperEls,
-    paginationCirclesContainerEl: paginationCirclesEls[1],
-    sliderTrackEl: sliderTrackEls[1],
-    buttonNextEl: buttonNextEls[0],
-    buttonPrevEl: buttonPrevEls[0],
-    visibleSlidesCount: 3,
-});
-configureSlider({
-    slidesEls: sliderShoppingWrapperEls,
-    paginationCirclesContainerEl: paginationCirclesEls[2],
-    sliderTrackEl: sliderTrackEls[2],
-    buttonNextEl: buttonNextEls[1],
-    buttonPrevEl: buttonPrevEls[1],
-    visibleSlidesCount: 4,
-});
+const getRenderSlides = () => {
+    const videoCardsEls = [...document.querySelectorAll('.video_card')];
+    const sliderRobotWrapperEls = [...document.querySelectorAll('.slider_robot_wrapper')];
+    const sliderShoppingWrapperEls = [...document.querySelectorAll('.slider_shopping_wrapper')];
+    const sliderMarketingWrapperEls = [...document.querySelectorAll('.slider_marketing_wrapper')];
+
+    const sliderNavPrevEls = [...document.querySelectorAll('.slider_nav_prev')];
+    const sliderNavNextEls = [...document.querySelectorAll('.slider_nav_next')];
+
+    const sliderTrackEls = [...document.querySelectorAll('.slider_track')];
+
+    const sliderPaginationEls = [...document.querySelectorAll('.slider_pagination')];
+
+    configureSlider({
+        slidesEls: videoCardsEls,
+        sliderPaginationEl: sliderPaginationEls[0],
+        sliderTrackEl: sliderTrackEls[0],
+        visibleSlidesCount: 2,
+        sliderTrackEls: sliderTrackEls,
+    });
+    configureSlider({
+        slidesEls: sliderRobotWrapperEls,
+        sliderPaginationEl: sliderPaginationEls[1],
+        sliderTrackEl: sliderTrackEls[1],
+        sliderNavNextEl: sliderNavNextEls[0],
+        sliderNavPrevEl: sliderNavPrevEls[0],
+        visibleSlidesCount: 3,
+        sliderTrackEls: sliderTrackEls,
+    });
+    configureSlider({
+        slidesEls: sliderShoppingWrapperEls,
+        sliderPaginationEl: sliderPaginationEls[2],
+        sliderTrackEl: sliderTrackEls[2],
+        sliderNavNextEl: sliderNavNextEls[1],
+        sliderNavPrevEl: sliderNavPrevEls[1],
+        visibleSlidesCount: 4,
+        sliderTrackEls: sliderTrackEls,
+    });
+    configureSlider({
+        slidesEls: sliderMarketingWrapperEls,
+        sliderPaginationEl: sliderPaginationEls[3],
+        sliderTrackEl: sliderTrackEls[3],
+        sliderNavNextEl: sliderNavNextEls[2],
+        sliderNavPrevEl: sliderNavPrevEls[2],
+        visibleSlidesCount: 1,
+        sliderTrackEls: sliderTrackEls,
+    });
+};

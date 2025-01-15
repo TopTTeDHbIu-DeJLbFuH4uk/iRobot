@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="styles/marketing.css">
     <link rel="stylesheet" href="styles/slider_robots.css">
     <link rel="stylesheet" href="styles/slider_shopping.css">
+    <link rel="stylesheet" href="styles/slider_marketing.css">
 </head>
 <body>
 
@@ -377,7 +378,7 @@
 
         </div>
     </div>
-    <ol class="video_pagination_circles pagination_circles"></ol>
+    <ol class="video_pagination_circles slider_pagination"></ol>
 </section>
 <!-- MARKETING -->
 <div class="marketing">
@@ -404,192 +405,95 @@
     <h1 class="slider_header">Don’t just take our word for it</h1>
 
     <div class="slider_robots_container">
-        <div class="slider_btn_container btn_robot_prev button_prev">
-            <button class="slider_btn btn_prev"></button>
+        <div class="slider_nav slider_nav_prev">
+            <button class="slider_btn slider_btn_prev"></button>
         </div>
 
         <div class="slider_robots_track slider_track">
-            <div class="slider_robot_wrapper slide">
-                <a href="#">
-                    <img class="slide_robot" title="Click to Shop Roomba Combo® j9+"
-                         src="assets/slider_robots/RoombaCombo_j9%20_Photo_Lifestyle_Entryway_Girl_Dog_1500x1500.webp"
-                         alt="robot">
-                </a>
-                <div class="slide_robot_content">
-                    <div>★★★★★</div>
-                    <h3>"Whenever I see my Robot has cleaned, I'm happy!"</h3>
-                    <p class="slide_robot_description">I love having my robot clean for me. I have so much less dog hair
-                        in my house now. My floors are always so much cleaner! - Rosie, ME</p>
-                    <a class="slide_robot_action" href="#">Shop Roomba Combo® j9+</a>
+            <template>
+                <div class="slider_robot_wrapper slide">
+                    <a href="#">
+                        <img class="slide_robot" title="Click to Shop Roomba Combo® j9+"
+                             src="assets/slider_robots/RoombaCombo_j9%20_Photo_Lifestyle_Entryway_Girl_Dog_1500x1500.webp"
+                             alt="robot">
+                    </a>
+                    <div class="slide_content">
+                        <div>★★★★★</div>
+                        <h3>"Whenever I see my Robot has cleaned, I'm happy!"</h3>
+                        <p class="slide_description">I love having my robot clean for me. I have so much less dog hair
+                            in my house now. My floors are always so much cleaner! - Rosie, ME</p>
+                        <a class="slide_action" href="#">Shop Roomba Combo® j9+</a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="slider_robot_wrapper slide">
-                <a href="#">
-                    <img class="slide_robot" title="Click to Shop Roomba Combo® i5+"
-                         src="assets/slider_robots/Roomba_Combo_i5+_Holiday23_Static_Banner_Full_Width_Deals%20Page_1500x1500.webp"
-                         alt="robot">
-                </a>
-                <div class="slide_robot_content">
-                    <div>★★★★★</div>
-                    <h3>"Must Have Product!"</h3>
-                    <p class="slide_robot_description">
-                        The Roomba Combo is a must need product! It is already a game changer in our house. With a
-                        toddler who gets crumbs/food everywhere it has made both snack time and meal time easier. I have
-                        it go on once he is all done in the highchair- and it has helped saved me time and made our
-                        floors look extremely clean! - Kris, MA
-                    </p>
-                    <a class="slide_robot_action" href="#">Shop Roomba Combo® i5+</a>
-                </div>
-            </div>
-
-            <div class="slider_robot_wrapper slide">
-                <a href="#">
-                    <img class="slide_robot" title="Click to Shop Roomba Combo® 10 Max"
-                         src="assets/slider_robots/RoombaCombo_10Max_AutoWash_Photo_Lifestyle_Dinner_DirtDetect_3000x3000.webp"
-                         alt="robot">
-                </a>
-                <div class="slide_robot_content">
-                    <div>★★★★★</div>
-                    <h3>"Invest in Roomba 10 for a clean home!"</h3>
-                    <p class="slide_robot_description">
-                        "Wow, I am so impressed with the iRobot Roomba combo 10! The roomba is so smart and does a great
-                        job avoiding furniture/items while cleaning your floor. This one also comes with a mopping
-                        feature which also drys so quickly. I love that we can set up the roomba to clean when we're out
-                        & we return home to clean space! I am so impressed by its vacuum function! It picks up
-                        everything!" - carolinec343, USA
-                    </p>
-                    <a class="slide_robot_action" href="#">Shop Roomba Combo® 10 Max</a>
-                </div>
-            </div>
-
-            <div class="slider_robot_wrapper slide">
-                <a href="#">
-                    <img class="slide_robot" title="Click to Shop Roomba Combo® j9+"
-                         src="assets/slider_robots/Homepage_RoombaCombo_j9plus_Web_PDP_Carousel_2000x2000.webp"
-                         alt="robot">
-                </a>
-                <div class="slide_robot_content">
-                    <div>★★★★★</div>
-                    <h3>"King of Clean Floors"</h3>
-                    <p class="slide_robot_description">
-                        "King of Clean Floors – Overall, I was very impressed with the Roomba Combo j9+. Its pick-up,
-                        extra power, dual-brushes and unique pressurized mopping system make it an easy choice if your
-                        first concern is having the cleanest possible floors." - Vacuum Wars (www.vacuumwars.com)
-                    </p>
-                    <a class="slide_robot_action" href="#">Shop Roomba Combo® j9+</a>
-                </div>
-            </div>
-
-            <div class="slider_robot_wrapper slide">
-                <a href="#">
-                    <img class="slide_robot" title="Click to Shop Roomba® j9+"
-                         src="assets/slider_robots/NA_Roomba_j9+_j9_Web_PDP_Carousel_iRobotOS_3000x3000.webp"
-                         alt="robot">
-                </a>
-                <div class="slide_robot_content">
-                    <div>★★★★★</div>
-                    <h3>"Life changing"</h3>
-                    <p class="slide_robot_description">
-                        "This roomba is amazing. It is compatible with Alexa, so I can just ask her to have the roomba
-                        clean for me. It mapped out my whole house and I can even ask it to just clean a specific room!
-                        I would recommend this to anyone! The suction is great and leave my house spotless!" – Joan, CT*
-                        *Submitted as part of a free sample program
-                    </p>
-                    <a class="slide_robot_action" href="#">Shop Roomba® j9+</a>
-                </div>
-            </div>
-
-            <div class="slider_robot_wrapper slide">
-                <a href="#">
-                    <img class="slide_robot" title="Click to Shop Roomba Combo® j5+"
-                         src="assets/slider_robots/RoombaCombo_j5_j5+_Photo_InSitu_Mopping_2000x2000.webp" alt="robot">
-                </a>
-                <div class="slide_robot_content">
-                    <div>★★★★★</div>
-                    <h3>"Blown away"</h3>
-                    <p class="slide_robot_description">
-                        "I'm blown away by how well this thing cleans—it's able to get under and around all sorts of
-                        objects, sweeping away all the dirt and dust in the process!" - Nicole22, OH*
-                        *Submitted as part of a free sample program
-                    </p>
-                    <a class="slide_robot_action" href="#">Shop Roomba Combo® j5+</a>
-                </div>
-            </div>
+            </template>
         </div>
 
-        <div class="slider_btn_container btn_robot_next button_next">
+        <div class="slider_nav slider_nav_next">
             <button class="slider_btn btn_next"></button>
         </div>
     </div>
 
-    <ol class="robot_pagination_circles pagination_circles"></ol>
+    <ol class="slider_pagination"></ol>
 </div>
 <!-- SLIDER SHOPPING -->
 <div class="slider_shopping">
     <h1 class="slider_header">iRobot makes shopping easy</h1>
 
     <div class="slider_shopping_container">
-        <div class="slider_btn_container btn_shopping_prev button_prev">
-            <button class="slider_btn btn_prev"></button>
+        <div class="slider_nav slider_nav_prev">
+            <button class="slider_btn slider_btn_prev"></button>
         </div>
 
         <div class="slider_shopping_track slider_track">
-            <div class="slider_shopping_wrapper slide">
-                <img class="slide_shopping" src="assets/slider_shopping/60_Day_Return_Image_Tile_3000x2000.webp" alt="">
-            </div>
-            <div class="slider_shopping_wrapper slide">
-                <img class="slide_shopping" src="assets/slider_shopping/roomba-free-shipping-4499.webp" alt="">
-            </div>
-            <div class="slider_shopping_wrapper slide">
-                <img class="slide_shopping" src="assets/slider_shopping/Price_Match_Image_Tile_3000x2000.webp" alt="">
-            </div>
-            <div class="slider_shopping_wrapper slide">
-                <img class="slide_shopping" src="assets/slider_shopping/iRobot_iExpert_Image_Tile_3000x2000.webp"
-                     alt="">
-            </div>
-            <div class="slider_shopping_wrapper slide">
-                <a href="#">
-                    <img class="slide_shopping" src="assets/slider_shopping/Affirm_Image_Tile_3000x2000.webp" alt="">
-                </a>
-            </div>
-            <div class="slider_shopping_wrapper slide">
-                <img class="slide_shopping" src="assets/slider_shopping/Pay_your_way_Image_Tile_3000x2000.webp" alt="">
-            </div>
-            <a class="slider_shopping_wrapper slide" href="#">
-                <img class="slide_shopping"
-                     src="assets/slider_shopping/iRobot_Trade_in_Image_Tile_purple_3000x2000.webp" alt="">
-            </a>
-            <a class="slider_shopping_wrapper slide" href="#">
-                <img class="slide_shopping" src="assets/slider_shopping/iRobot_Warranty_Image_Tile_3000x2000.webp"
-                     alt="">
-            </a>
-            <div class="slider_shopping_wrapper slide">
-                <img class="slide_shopping" src="assets/slider_shopping/iRobot_Email_Sign_up_Image_Tile_3000x2000.webp"
-                     alt="">
-            </div>
+            <template>
+                <div class="slider_shopping_wrapper slide">
+                    <img class="slide_shopping" src="assets/slider_shopping/60_Day_Return_Image_Tile_3000x2000.webp"
+                         alt="">
+                </div>
+            </template>
         </div>
 
-        <div class="slider_btn_container btn_shopping_next button_next">
+        <div class="slider_nav slider_nav_next">
             <button class="slider_btn btn_next"></button>
         </div>
     </div>
-    <ol class="shopping_pagination_circles pagination_circles"></ol>
+    <ol class="slider_pagination"></ol>
 </div>
+<!-- SLIDER MARKETING -->
+<div class="slider_marketing">
+
+    <div class="slider_marketing_container">
+        <div class="slider_nav slider_nav_prev">
+            <button class="slider_btn slider_btn_prev"></button>
+        </div>
+
+        <div class="slider_marketing_track slider_track">
+            <template>
+                <div class="slider_marketing_wrapper slide">
+                    <img class="slide_marketing"
+                         src="assets/slider_marketing/Testimonial_Banner_EditorsChoice_PCMag_Desktop_Essential_3000x1500.webp"
+                         alt="">
+                </div>
+            </template>
+        </div>
+
+        <div class="slider_nav slider_nav_next">
+            <button class="slider_btn btn_next"></button>
+        </div>
+    </div>
+
+    <ol class="slider_pagination"></ol>
+</div>
+
+
 
 <script src="scripts/header.js"></script>
 <script src="scripts/navigation.js"></script>
 <script src="scripts/video_section.js"></script>
 <script src="scripts/featured_offer.js"></script>
 <script src="scripts/sliders.js"></script>
+<script src="scripts/database.js"></script>
 <!-- MOBILE SCRIPTS -->
 <script src="mobile_scripts/mobile_budget_section.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-

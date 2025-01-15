@@ -24,7 +24,7 @@
     overflow: hidden;
 }
 
-.slider_btn_container {
+.slider_nav {
     position: absolute;
     z-index: 1000;
 
@@ -40,12 +40,12 @@
     cursor: pointer;
 }
 
-.btn_robot_prev {
-    top: calc(100% / 2);
+.slider_nav_prev {
+    top: 50%;
     left: 0;
 }
-.btn_robot_next {
-    top: calc(100% / 2);
+.slider_nav_next {
+    top: 50%;
     right: 0;
 }
 
@@ -55,7 +55,7 @@
     border-top: 2px solid #6a768c;
     border-right: 2px solid #6a768c;
 }
-.btn_prev {
+.slider_btn_prev {
     transform: rotate(-135deg);
     margin-left: 3px;
 }
@@ -105,9 +105,16 @@
     width: 100%;
     height: auto;
     border-radius: 12px;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    user-select: none;
 }
 
-.slide_robot_content {
+.slide_content {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -117,7 +124,7 @@
     font-weight: 600;
 }
 
-.slide_robot_description {
+.slide_description {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -125,7 +132,7 @@
     margin-bottom: 15px;
 }
 
-.slide_robot_action {
+.slide_action {
     width: fit-content;
     color: #447355;
     font-size: 18px;
@@ -135,15 +142,14 @@
     pointer-events: auto;
 }
 
-.slide_robot_action::after {
+.slide_action::after {
     display: flex;
     content: '';
     border-bottom: .0625rem solid rgba(108, 184, 106, .4);
     width: 100%;
 }
 
-
-.robot_pagination_circles {
+.slider_pagination {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -167,13 +173,18 @@
     box-shadow: 0 0 0 7px #447355;
 }
 
+@media screen and (max-width: 1440px) {
+
+    .slider_header {
+        font-size: 30px;
+    }
+
+}
+
 @media screen and (max-width: 1024px) {
 
-    .slider_btn_container {
+    .slider_nav {
         display: none;
-    }
-    .slider_robots_container {
-        width: clamp(100px, 100%, 942px);
     }
 
     .slider_robot_wrapper {
@@ -190,6 +201,14 @@
 
     .slider_robot_wrapper {
         flex-basis: 100%;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+
+    .slider_pagination {
+        gap: 18px;
     }
 
 }
