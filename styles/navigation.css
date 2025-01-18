@@ -357,8 +357,6 @@
     }
 
     .mobile_nav {
-        position: relative;
-
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -384,27 +382,64 @@
         cursor: pointer;
     }
 
-    .mobile_menu_container {
+    .mobile_quick_search {
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        padding: 12px 20px 12px 20px;
+        box-sizing: border-box;
+    }
+
+    .mobile_search {
+        padding: 9px 35px 9px 20px;
+        width: clamp(60px, 100%, 340px);
+        height: 14px;
+
+        border-radius: 21px;
+        background-color: #f2f2f2;
+        border: 4px solid transparent;
+        outline: none;
+        transition: all .2s ease-in-out;
+
+        background-image: url("../assets/other/search.svg");
+        background-repeat: no-repeat;
+        background-position: calc(100% - 10px);
+    }
+
+    .mobile_search:focus {
+        border: 4px solid #d3ead2;
+    }
+
+    .drop_down_menu {
         position: absolute;
         left: 0;
-        top: -42px;
+        top: 0;
         z-index: 1000;
 
         display: flex;
 
-        width: clamp(100px, 100%, 510px);
-        height: 100vh;
+        width: calc(100% - 55px);
+        max-width: 510px;
+        height: 200vh;
         background-color: #ffffff;
 
         transition: transform .4s ease-in-out;
-        transform: translateX(-100%);
+        /*transform: translateX(-100%);*/
+
+        margin-right: 55px;
 
         overflow: hidden;
 
         cursor: auto;
     }
 
-    .drop_down_menu {
+    .mobile_menu_container {
+        position: relative;
+
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -412,9 +447,11 @@
     }
 
     .container_close_menu {
+        z-index: 2000;
+
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: space-between;
         width: 100%;
     }
     .container_close_menu::after {
@@ -423,6 +460,27 @@
         width: 100%;
 
         padding-top: 20px;
+    }
+
+    .btn_back {
+        display: flex;
+        align-items: center;
+
+        font-size: 15px;
+        color: #447355;
+        font-weight: 600;
+
+        visibility: hidden;
+
+        cursor: pointer;
+    }
+    .btn_back::before {
+        content: '';
+        background: url("../assets/other/arrow_back.svg") no-repeat center;
+        width: 16px;
+        height: 17px;
+
+        margin-top: 2px;
     }
 
     .close_menu {
@@ -438,14 +496,15 @@
         cursor: pointer;
     }
 
-    .mobile_item_container {
+    .mobile_menu_links {
         display: flex;
+        height: 100%;
         flex-direction: column;
 
         overflow-y: auto;
     }
 
-    .mobile_menu_item {
+    .mobile_nav_item {
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -459,7 +518,7 @@
         cursor: pointer;
     }
 
-    .mobile_menu_item::after {
+    .mobile_nav_item::after {
         content: '';
         background: url("../assets/other/arrow.svg") no-repeat center;
         width: 24px;
@@ -468,7 +527,7 @@
         margin: 4px 0 0 5px;
     }
 
-    .container_nav_items::before {
+    .container_nav_links::before {
         content: '';
         display: flex;
         border-bottom: 1px solid #e2e3e6;
@@ -478,24 +537,23 @@
         margin-bottom: 26px;
     }
 
-    .mobile_heading_item, a {
+    .mobile_header_link {
         color: #3c4453;
         font-size: 17px;
         font-weight: 500;
         text-decoration: none;
-
-        margin-bottom: 26px;
     }
 
-    .mobile_nav_item a {
+    .mobile_link {
+        padding-top: 26px;
+        margin-bottom: 26px;
+    }
+    .mobile_link > a {
         color: #3c4453;
         font-size: 17px;
         text-decoration: none;
 
         padding-left: 21px;
-    }
-    .mobile_nav_item {
-        margin-bottom: 26px;
     }
 
     .selected_language_container {
@@ -545,52 +603,102 @@
         height: 16px;
     }
 
+    .menu_item_container {
+        position: absolute;
 
+        width: 100%;
+        max-width: 490px;
+        height: 200vh;
+        background-color: #ffffff;
 
+        box-sizing: border-box;
+        padding: 54px 20px 20px 0;
 
+        transition: transform .4s ease-in-out;
+        transform: translateX(490px);
+    }
 
+    .menu_shop_title {
+        font-size: 21px;
+        color: #3c4453;
 
+        padding-top: 26px;
+    }
 
+    .mobile_menu_item {
+        padding-top: 26px;
+    }
 
-    /*.secondary_menu_container {*/
-    /*    display: flex;*/
-    /*    transform: translateX(510px);*/
-    /*}*/
+    .mobile_menu_item > a {
+        color: #3c4453;
+        font-weight: 600;
+        text-decoration: none;
 
+        cursor: pointer;
+    }
 
-
-
-
-    .mobile_quick_search {
-        position: relative;
-
+    .mobile_info_header {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
+
+        font-size: 18px;
+        font-weight: 600;
+        color: #447355;
+
+        padding-top: 50px;
+    }
+    .mobile_info_header::after {
+        content: '';
+        border-bottom: 1px solid #e2e3e6;
         width: 100%;
 
-        padding: 12px 20px 12px 20px;
-        box-sizing: border-box;
+        padding-top: 20px;
     }
 
-    .mobile_search {
-        padding: 9px 35px 9px 20px;
-        width: clamp(60px, 100%, 340px);
-        height: 14px;
+    .mobile_info_link {
+        padding-top: 24px;
+    }
+    .mobile_info_link a {
+        color: #3c4453;
+        text-decoration: none;
 
-        border-radius: 21px;
-        background-color: #f2f2f2;
-        border: 4px solid transparent;
-        outline: none;
-        transition: all .2s ease-in-out;
-
-        background-image: url("../assets/other/search.svg");
-        background-repeat: no-repeat;
-        background-position: calc(100% - 10px);
+        cursor: pointer;
     }
 
-    .mobile_search:focus {
-        border: 4px solid #d3ead2;
+    .mobile_promo_header {
+        text-align: center;
+        color: #3c4453;
+        font-size: 18px;
+
+        padding-top: 40px;
+        margin-bottom: 12px;
+    }
+
+    .mobile_promo_content {
+        text-align: center;
+        color: #3c4453;
+        font-size: 14px;
+
+        margin-bottom: 22px;
+    }
+
+    .mobile_promo_btn {
+        width: 100%;
+        height: 56px;
+        border: 2px solid #447355;
+        border-radius: 37px;
+
+        cursor: pointer;
+
+        color: #447355;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .mobile_promo_btn:hover {
+        transition: outline .2s ease-in-out;
+        outline: 6px solid rgba(108, 184, 106, .3);
     }
 
 }
