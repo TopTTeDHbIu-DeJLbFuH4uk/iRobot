@@ -13,15 +13,17 @@ closeMenuEl.addEventListener('click', () => {
 });
 
 const mobileNavItemEls = [...document.querySelectorAll('.mobile_nav_item')];
-const menuItemContainerEl = document.querySelector('.menu_item_container');
+const menuItemContainerEls = [...document.querySelectorAll('.menu_item_container')];
 const btnBackEl = document.querySelector('.btn_back');
 
-btnBackEl.addEventListener('click', () => {
-    menuItemContainerEl.style.transform = `translateX(490px)`;
-    btnBackEl.classList.remove('visibility');
-});
+// btnBackEl.addEventListener('click', () => {
+//     menuItemContainerEl.style.transform = `translateX(490px)`;
+//     btnBackEl.classList.remove('visibility');
+// });
 
 const openMobileMenu = itemMenu => {
+
+
 
     itemMenu.addEventListener('click', () => {
         btnBackEl.classList.add('visibility');
@@ -30,6 +32,13 @@ const openMobileMenu = itemMenu => {
 
 };
 mobileNavItemEls.forEach(openMobileMenu);
+
+
+
+
+
+
+
 
 
 const mobileSelectedLanguageEl = document.querySelector('.mobile_selected_language');

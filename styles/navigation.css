@@ -424,7 +424,7 @@
 
         width: calc(100% - 55px);
         max-width: 510px;
-        height: 200vh;
+        height: 100%;
         background-color: #ffffff;
 
         transition: transform .4s ease-in-out;
@@ -443,6 +443,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+
         padding: 20px 20px 0 20px;
     }
 
@@ -502,6 +503,7 @@
         flex-direction: column;
 
         overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .mobile_nav_item {
@@ -608,7 +610,7 @@
 
         width: 100%;
         max-width: 490px;
-        height: 200vh;
+        height: 100%;
         background-color: #ffffff;
 
         box-sizing: border-box;
@@ -616,6 +618,13 @@
 
         transition: transform .4s ease-in-out;
         transform: translateX(490px);
+    }
+
+    .menu_content {
+        overflow-y: auto;
+        height: 100%;
+
+        padding-right: 10px;
     }
 
     .menu_shop_title {
@@ -680,6 +689,15 @@
         font-size: 14px;
 
         margin-bottom: 22px;
+    }
+
+    .mobile_btn_container {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+
+        margin-bottom: 64px;
+        padding: 0 15px 0 15px;
     }
 
     .mobile_promo_btn {
