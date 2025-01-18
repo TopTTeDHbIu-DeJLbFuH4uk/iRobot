@@ -53,6 +53,10 @@
 
 @media screen and (max-width: 1024px) {
 
+    .slider_shopping {
+        padding: 0 0 50px 0;
+    }
+
     .slider_shopping_wrapper {
         flex-basis: calc((100% - 2 * 20px) / 3);
     }

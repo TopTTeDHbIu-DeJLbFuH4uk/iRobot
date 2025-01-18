@@ -357,6 +357,8 @@
     }
 
     .mobile_nav {
+        position: relative;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -378,7 +380,186 @@
         background: url("../assets/other/burger.svg") no-repeat center;
         width: 26px;
         height: 26px;
+
+        cursor: pointer;
     }
+
+    .mobile_menu_container {
+        position: absolute;
+        left: 0;
+        top: -42px;
+        z-index: 1000;
+
+        display: flex;
+
+        width: clamp(100px, 100%, 510px);
+        height: 100vh;
+        background-color: #ffffff;
+
+        transition: transform .4s ease-in-out;
+        transform: translateX(-100%);
+
+        overflow: hidden;
+
+        cursor: auto;
+    }
+
+    .drop_down_menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 20px 0 20px;
+    }
+
+    .container_close_menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    .container_close_menu::after {
+        content: '';
+        border-bottom: 2px solid #dce9d5;
+        width: 100%;
+
+        padding-top: 20px;
+    }
+
+    .close_menu {
+        background-image: url("../assets/other/close_icon.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+
+        width: 32px;
+        height: 32px;
+        background-color: #518a70;;
+        border-radius: 100%;
+
+        cursor: pointer;
+    }
+
+    .mobile_item_container {
+        display: flex;
+        flex-direction: column;
+
+        overflow-y: auto;
+    }
+
+    .mobile_menu_item {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        color: #3c4453;
+        font-size: 21px;
+        font-weight: 600;
+
+        padding-top: 25px;
+
+        cursor: pointer;
+    }
+
+    .mobile_menu_item::after {
+        content: '';
+        background: url("../assets/other/arrow.svg") no-repeat center;
+        width: 24px;
+        height: 24px;
+
+        margin: 4px 0 0 5px;
+    }
+
+    .container_nav_items::before {
+        content: '';
+        display: flex;
+        border-bottom: 1px solid #e2e3e6;
+        width: 100%;
+
+        padding-top: 25px;
+        margin-bottom: 26px;
+    }
+
+    .mobile_heading_item, a {
+        color: #3c4453;
+        font-size: 17px;
+        font-weight: 500;
+        text-decoration: none;
+
+        margin-bottom: 26px;
+    }
+
+    .mobile_nav_item a {
+        color: #3c4453;
+        font-size: 17px;
+        text-decoration: none;
+
+        padding-left: 21px;
+    }
+    .mobile_nav_item {
+        margin-bottom: 26px;
+    }
+
+    .selected_language_container {
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 26px;
+    }
+
+    .mobile_selected_language {
+        display: flex;
+        width: fit-content;
+        gap: 5px;
+
+        color: #3c4453;
+        font-size: 17px;
+
+        padding-left: 21px;
+
+        cursor: pointer;
+    }
+    .mobile_selected_language::after {
+        content: '';
+        background: url("../assets/other/countrySelectror.svg") no-repeat center;
+        width: 16px;
+        height: 16px;
+
+        margin-top: 4px;
+    }
+
+    .mobile_language {
+        display: flex;
+        gap: 8px;
+        width: fit-content;
+
+        color: #212529;
+        font-size: 14px;
+
+        margin-top: 20px;
+
+        cursor: pointer;
+    }
+    .mobile_language::before {
+        content: '';
+        background: url("../assets/other/russian-flag.svg") no-repeat center;
+        width: 16px;
+        height: 16px;
+    }
+
+
+
+
+
+
+
+
+    /*.secondary_menu_container {*/
+    /*    display: flex;*/
+    /*    transform: translateX(510px);*/
+    /*}*/
+
+
+
+
 
     .mobile_quick_search {
         position: relative;
