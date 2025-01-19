@@ -231,6 +231,21 @@
     height: 64px;
 }
 
+.author_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.author {
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.author:hover {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 1024px) {
 
     .footer {
@@ -427,6 +442,10 @@
     }
 
     .footer_logo_container {
+        justify-content: flex-start;
+    }
+
+    .author_container {
         justify-content: flex-start;
     }
 
