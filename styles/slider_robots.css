@@ -9,7 +9,8 @@
 
 .slider_header {
     text-align: center;
-    width: 100%;
+    font-size: 40px;
+    color: #343A40;
 
     margin-bottom: 26px;
 }

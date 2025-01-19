@@ -12,36 +12,35 @@ closeMenuEl.addEventListener('click', () => {
     document.body.classList.remove('scroll_hidden');
 });
 
+
+
 const mobileNavItemEls = [...document.querySelectorAll('.mobile_nav_item')];
 const menuItemContainerEls = [...document.querySelectorAll('.menu_item_container')];
 const btnBackEl = document.querySelector('.btn_back');
+let lastSelectedMenuIndex;
 
-// btnBackEl.addEventListener('click', () => {
-//     menuItemContainerEl.style.transform = `translateX(490px)`;
-//     btnBackEl.classList.remove('visibility');
-// });
-
-const openMobileMenu = itemMenu => {
-
-
-
-    itemMenu.addEventListener('click', () => {
-        btnBackEl.classList.add('visibility');
-        menuItemContainerEl.style.transform = 'translateX(0)';
+mobileNavItemEls.forEach((mobileNavEl, index) => {
+    mobileNavEl.addEventListener('click', () => {
+        openMobileMenu(index);
     });
+});
 
+const openMobileMenu = index => {
+    lastSelectedMenuIndex = index;
+
+    btnBackEl.classList.add('visibility');
+    menuItemContainerEls[lastSelectedMenuIndex].style.transform = 'translateX(0)';
 };
-mobileNavItemEls.forEach(openMobileMenu);
 
-
-
-
-
-
+btnBackEl.addEventListener('click', () => {
+    menuItemContainerEls[lastSelectedMenuIndex].style.transform = `translateX(490px)`;
+    btnBackEl.classList.remove('visibility');
+});
 
 
 
 const mobileSelectedLanguageEl = document.querySelector('.mobile_selected_language');
+const mobileSelectedLanguageEls = document.querySelector('.mobile_selected_language > .hidden');
 const listOfLanguagesEl = document.querySelector('.list_of_languages');
 
 mobileSelectedLanguageEl.addEventListener('click', () => {

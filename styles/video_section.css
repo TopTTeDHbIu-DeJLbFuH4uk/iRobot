@@ -7,7 +7,10 @@
     margin: 0 20px 64px;
 }
 
-.video_section > h1 {
+.video_section > h2 {
+    font-size: 40px;
+    color: #343A40;
+
     margin-bottom: 26px;
 }
 
@@ -89,7 +92,7 @@
 
 @media screen and (max-width: 1440px) {
 
-    .video_section > h1 {
+    .video_section > h2 {
         font-size: 30px;
     }
 

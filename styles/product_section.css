@@ -55,6 +55,11 @@
     margin: 0 0 40px 0;
 }
 
+.budget_header h2 {
+    font-size: 40px;
+    color: #343A40;
+}
+
 .budget_cards {
     display: flex;
     justify-content: center;
@@ -168,7 +173,7 @@
         padding-top: 0;
     }
 
-    .budget_header > h1 {
+    .budget_header h2 {
         text-align: center;
 
         padding: 0;
